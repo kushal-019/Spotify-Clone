@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spotify Clone</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="spotify.svg"
+    />
+    <link rel="stylesheet" href="backup.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+  </head>
+  <body >
+    <div class="playbar">
+      <div class="song_desc">
+        <img
+          src="https://i0.wp.com/www.lyricspedia.co.in/wp-content/uploads/2023/08/Screenshot_20230818-123902-02.jpeg?resize=580%2C620&ssl=1"
+          alt=""
+        />
+        <div>
+          <p class="song_name">Song Name</p>
+          <p class="singer_name">Singer Name</p>
+        </div>
+      </div>
+      <div class="controls">
+        <div>
+          <input class="song_bar" type="range" value="0" min="0">
+        </div>
+        <div>
+          <audio id = "song_to_play"  style="display: none" controls>
+            <source  src="karan aujla/mexico.mp3" type="audio/mp3">
+          </audio>
+        <!-- shuffle -->
+        <i class="bi bi-shuffle" id="shuffle"></i>
+        <!-- prev -->
+        <i class="bi bi-skip-start-fill" id="prev_btn"></i>
+        <!-- pause -->
+        <i class="bi bi-play-circle-fill play"></i>
+        <!-- next -->
+        <i class="bi bi-skip-end-fill" id="next_btn"></i>
+        <!-- repeat -->
+        <i class="bi bi-repeat" id="repeat_song_btn"></i>
+      </div>
+      </div>
+
+      <div class="third">
+        <i class="bi bi-list-nested"></i>
+        <i class="bi bi-volume-up mute"></i>
+      </div>
+    </div>
+    <div class="container">
+      <div class="left_side">
+        <div class="first">
+          <!-- spotify icon  -->
+          <div class="spotify">
+            <i class="bi bi-spotify"></i>
+            <p>Spotify</p>
+          </div>
+          <div class="home">
+            <!-- home icon -->
+            <i class="bi bi-house"></i>
+            <p>Home</p>
+          </div>
+          <div class="search">
+            <!-- search icon -->
+            <i class="bi bi-search"></i>
+            <p>Search</p>
+          </div>
+        </div>
+        <div class="second">
+          <div class="top">
+            <div class="lib">
+              <!-- library icon -->
+              <i class="bi bi-collection"></i>
+              <p class="para">Your Library</p>
+            </div>
+            <div class="but para">
+              <!-- add button -->
+              <i class="bi bi-plus-lg"></i>
+              <!-- next arrow -> -->
+              <i class="bi bi-arrow-right"></i>
+            </div>
+          </div>
+          <div class="middle para">
+            <span><p class="name">Playlist</p></span>
+            <span><p class="desc">Artist</p></span>
+          </div>
+          <div class="recent para">
+            <!-- search icon -->
+            <i class="bi bi-search"></i>
+            <!-- icon for recent list  -->
+            <i class="bi bi-list-ul"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="right_side">
+        <div class="credentials">
+          <div class="pointer">
+            <!-- prev arrow -->
+            <i class="bi bi-chevron-left"></i>
+            <!-- next arrow -->
+            <i class="bi bi-chevron-right"></i>
+
+            <div class="searchbar">
+              <!-- search icon -->
+              <i class="bi bi-search"></i>
+              <input
+                type="text"
+                placeholder="   What do you want to listen to?"
+              />
+            </div>
+          </div>
+
+          <div class="account">
+            <!-- notification icon -->
+            <button id="btn1">Sign Up</button>
+            <button id="btn2">Log in</button>
+            <i class="bi bi-bell hide_btn"></i>
+
+            <!-- account icon  -->
+            <i class="bi bi-person hide_btn"></i>
+          </div>
+        </div>
+
+        <div class="home_page_display">
+          <p class="headings wishing">Good Evening</p>
+
+          <div class="songs">
+            <div class="your_artists">
+              <div class="artists" id="Pritam" onmouseover="showPlayIcon(this)" onmouseout="hidePlayIcon(this)">
+                <!-- recent artists blocks  -->
+                <img
+                  src="https://i.scdn.co/image/ab6761610000e5ebcb6926f44f620555ba444fca"
+                  alt=""
+                />
+                <div>
+                  <p>Pritam</p>
+                  <i class="bi bi-play-circle-fill green_btn_to_hide"></i>
+                </div>
+              </div>
+              <div class="artists" onmouseover="showPlayIcon(this)" onmouseout="hidePlayIcon(this)">
+                <!-- recent artists blocks  -->
+                <img
+                  src="https://www.sarkarinaukriexams.com/images/bio/1703740002-bio.png"
+                  alt=""
+                />
+                <div>
+                  <p>Dhanda Nyoliwala</p>
+                  <i class="bi bi-play-circle-fill green_btn_to_hide"></i>
+                </div>
+              </div>
+              <div class="artists" onmouseover="showPlayIcon(this)" onmouseout="hidePlayIcon(this)">
+                <!-- recent artists blocks  -->
+                <img
+                  src="https://static.india.com/wp-content/uploads/2023/02/Honey-Singh-2.jpg"
+                  alt=""
+                />
+                <div>
+                  <p>Yo Yo Honey Singh</p>
+                  <i class="bi bi-play-circle-fill green_btn_to_hide"></i>
+                </div>
+              </div>
+              <div class="artists" onmouseover="showPlayIcon(this)" onmouseout="hidePlayIcon(this)">
+                <!-- recent artists blocks  -->
+                <img
+                  src="https://i0.wp.com/www.lyricspedia.co.in/wp-content/uploads/2023/08/Screenshot_20230818-123902-02.jpeg?resize=580%2C620&ssl=1"
+                  alt=""
+                />
+                <div>
+                  <p>Karan Aujla</p>
+                  <i class="bi bi-play-circle-fill green_btn_to_hide"></i>
+                </div>
+              </div>
+              <div class="artists" onmouseover="showPlayIcon(this)" onmouseout="hidePlayIcon(this)">
+                <!-- recent artists blocks  -->
+                <img
+                  src="https://yt3.googleusercontent.com/ytc/AIf8zZTtB8M4MHDSXJvaDkpbCDKttlx2gs71nHxwEgq3pg=s900-c-k-c0x00ffffff-no-rj"
+                  alt=""
+                />
+                <div>
+                  <p>Anuv Jain</p>
+                  <i class="bi bi-play-circle-fill green_btn_to_hide"></i>
+                </div>
+              </div>
+              <div class="artists" onmouseover="showPlayIcon(this)" onmouseout="hidePlayIcon(this)">
+                <!-- recent artists blocks  -->
+                <img
+                  src="https://luxestar.co.in/storage/product/1668950634.JPG"
+                  alt=""
+                />
+                <div>
+                  <p>Ajay Hooda</p>
+                  <i class="bi bi-play-circle-fill green_btn_to_hide"></i>
+                </div>
+              </div>
+            </div>
+
+            <!-- recent songs  -->
+            <p class="headings">Made For You</p>
+
+            <div class="song">
+              <div class="template" id="pritam" onmouseover="showPlayIcon(this)" onmouseout="hidePlayIcon(this)">
+                <img
+                  src="https://i.scdn.co/image/ab6761610000e5ebcb6926f44f620555ba444fca"
+                  alt=""
+                />
+                <i class="bi bi-play-circle-fill green_appearing_button"></i>
+                <p>Pritam</p>
+                <p>Artist</p>
+              </div>
+              <div class="template" onmouseover="showPlayIcon(this)" onmouseout="hidePlayIcon(this)">
+                <img
+                  src="https://www.sarkarinaukriexams.com/images/bio/1703740002-bio.png"
+                  alt=""
+                />
+                <i class="bi bi-play-circle-fill green_appearing_button"></i>
+                <p>Dhanda Nyoliwala</p>
+                <p>Artist</p>
+              </div>
+              <div class="template" onmouseover="showPlayIcon(this)" onmouseout="hidePlayIcon(this)">
+                <img
+                  src="https://static.india.com/wp-content/uploads/2023/02/Honey-Singh-2.jpg"
+                  alt=""
+                />
+                <i class="bi bi-play-circle-fill green_appearing_button"></i>
+                <p>Yo Yo Honey Singh</p>
+                <p>Artist</p>
+              </div>
+              <div class="template" onmouseover="showPlayIcon(this)" onmouseout="hidePlayIcon(this)">
+                <img
+                  src="https://yt3.googleusercontent.com/ytc/AIf8zZTtB8M4MHDSXJvaDkpbCDKttlx2gs71nHxwEgq3pg=s900-c-k-c0x00ffffff-no-rj"
+                  alt=""
+                />
+                <i class="bi bi-play-circle-fill green_appearing_button"></i>
+                <p>Anuv jain</p>
+                <p>Artist</p>
+              </div>
+              <div class="template" onmouseover="showPlayIcon(this)" onmouseout="hidePlayIcon(this)">
+                <img
+                  src="https://i0.wp.com/www.lyricspedia.co.in/wp-content/uploads/2023/08/Screenshot_20230818-123902-02.jpeg?resize=580%2C620&ssl=1"
+                  alt=""
+                />
+                <i class="bi bi-play-circle-fill green_appearing_button"></i>
+                <p>Karan Aujla</p>
+                <p>Artist</p>
+              </div>
+            </div>
+
+            <p class="headings">Today's Biggest Hits</p>
+
+            <div class="song">
+              <div class="template" onmouseover="showPlayIcon(this)" onmouseout="hidePlayIcon(this)">
+                <img
+                  src="https://i0.wp.com/www.lyricspedia.co.in/wp-content/uploads/2023/08/Screenshot_20230818-123902-02.jpeg?resize=580%2C620&ssl=1"
+                  alt=""
+                />
+                <i class="bi bi-play-circle-fill green_appearing_button"></i>
+                <p>Karan Aujla</p>
+                <p>Artist</p>
+              </div>
+              <div class="template" onmouseover="showPlayIcon(this)" onmouseout="hidePlayIcon(this)">
+                <img
+                  src="https://i0.wp.com/www.lyricspedia.co.in/wp-content/uploads/2023/08/Screenshot_20230818-123902-02.jpeg?resize=580%2C620&ssl=1"
+                  alt=""
+                />
+                <i class="bi bi-play-circle-fill green_appearing_button"></i>
+                <p>Karan Aujla</p>
+                <p>Artist</p>
+              </div>
+              <div class="template" onmouseover="showPlayIcon(this)" onmouseout="hidePlayIcon(this)">
+                <img
+                  src="https://i0.wp.com/www.lyricspedia.co.in/wp-content/uploads/2023/08/Screenshot_20230818-123902-02.jpeg?resize=580%2C620&ssl=1"
+                  alt=""
+                />
+                <i class="bi bi-play-circle-fill green_appearing_button"></i>
+                <p>Karan Aujla</p>
+                <p>Artist</p>
+              </div>
+              <div class="template" onmouseover="showPlayIcon(this)" onmouseout="hidePlayIcon(this)">
+                <img
+                  src="https://i0.wp.com/www.lyricspedia.co.in/wp-content/uploads/2023/08/Screenshot_20230818-123902-02.jpeg?resize=580%2C620&ssl=1"
+                  alt=""
+                />
+                <i class="bi bi-play-circle-fill green_appearing_button"></i>
+                <p>Karan Aujla</p>
+                <p>Artist</p>
+              </div>
+              <div class="template" onmouseover="showPlayIcon(this)" onmouseout="hidePlayIcon(this)">
+                <img
+                  src="https://i0.wp.com/www.lyricspedia.co.in/wp-content/uploads/2023/08/Screenshot_20230818-123902-02.jpeg?resize=580%2C620&ssl=1"
+                  alt=""
+                />
+                <i class="bi bi-play-circle-fill green_appearing_button"></i>
+                <p>Karan Aujla</p>
+                <p>Artist</p>
+              </div>
+              <div class="template" onmouseover="showPlayIcon(this)" onmouseout="hidePlayIcon(this)">
+                <img
+                  src="https://i0.wp.com/www.lyricspedia.co.in/wp-content/uploads/2023/08/Screenshot_20230818-123902-02.jpeg?resize=580%2C620&ssl=1"
+                  alt=""
+                />
+                <i class="bi bi-play-circle-fill green_appearing_button"></i>
+                <p>Karan Aujla</p>
+                <p>Artist</p>
+              </div>
+              <div class="template" onmouseover="showPlayIcon(this)" onmouseout="hidePlayIcon(this)">
+                <img
+                  src="https://i0.wp.com/www.lyricspedia.co.in/wp-content/uploads/2023/08/Screenshot_20230818-123902-02.jpeg?resize=580%2C620&ssl=1"
+                  alt=""
+                />
+                <i class="bi bi-play-circle-fill green_appearing_button"></i>
+                <p>Karan Aujla</p>
+                <p>Artist</p>
+              </div>
+              <div class="template" onmouseover="showPlayIcon(this)" onmouseout="hidePlayIcon(this)">
+                <img
+                  src="https://i0.wp.com/www.lyricspedia.co.in/wp-content/uploads/2023/08/Screenshot_20230818-123902-02.jpeg?resize=580%2C620&ssl=1"
+                  alt=""
+                />
+                <i class="bi bi-play-circle-fill green_appearing_button"></i>
+                <p>Karan Aujla</p>
+                <p>Artist</p>
+              </div>
+              <div class="template" onmouseover="showPlayIcon(this)" onmouseout="hidePlayIcon(this)">
+                <img
+                  src="https://i0.wp.com/www.lyricspedia.co.in/wp-content/uploads/2023/08/Screenshot_20230818-123902-02.jpeg?resize=580%2C620&ssl=1"
+                  alt=""
+                />
+                <i class="bi bi-play-circle-fill green_appearing_button"></i>
+                <p>Karan Aujla</p>
+                <p>Artist</p>
+              </div>
+              <div class="template" onmouseover="showPlayIcon(this)" onmouseout="hidePlayIcon(this)">
+                <img
+                  src="https://i0.wp.com/www.lyricspedia.co.in/wp-content/uploads/2023/08/Screenshot_20230818-123902-02.jpeg?resize=580%2C620&ssl=1"
+                  alt=""
+                />
+                <i class="bi bi-play-circle-fill green_appearing_button"></i>
+                <p>Karan Aujla</p>
+                <p>Artist</p>
+              </div>
+              <div class="template" onmouseover="showPlayIcon(this)" onmouseout="hidePlayIcon(this)">
+                <img
+                  src="https://i0.wp.com/www.lyricspedia.co.in/wp-content/uploads/2023/08/Screenshot_20230818-123902-02.jpeg?resize=580%2C620&ssl=1"
+                  alt=""
+                />
+                <i class="bi bi-play-circle-fill green_appearing_button"></i>
+                <p>Karan Aujla</p>
+                <p>Artist</p>
+              </div>
+              <div class="template" onmouseover="showPlayIcon(this)" onmouseout="hidePlayIcon(this)">
+                <img
+                  src="https://i0.wp.com/www.lyricspedia.co.in/wp-content/uploads/2023/08/Screenshot_20230818-123902-02.jpeg?resize=580%2C620&ssl=1"
+                  alt=""
+                />
+                <i class="bi bi-play-circle-fill green_appearing_button"></i>
+                <p>Karan Aujla</p>
+                <p>Artist</p>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+
+        <div class="search_display">
+          <p class="headings">Browser All</p>
+          <div class="choice">
+            <div class="genre">
+              <p>Music</p>
+              <img
+                src="https://i.scdn.co/image/ab6761610000e5eb859e4c14fa59296c8649e0e4"
+                alt=""
+              />
+            </div>
+            <div class="genre">
+              <p>Podcasts</p>
+              <img
+                src="https://www.contentbot.ai/blog/wp-content/uploads/2021/06/podcast.jpg"
+                alt=""
+              />
+            </div>
+            <div class="genre">
+              <p>Live Event</p>
+              <img
+                src="https://www.celebrityschool.in/blogs/wp-content/uploads/2022/07/Vocal-Singing-Lessons.jpg"
+                alt=""
+              />
+            </div>
+            <div class="genre">
+              <p>Motivation</p>
+              <img
+                src="https://static.vecteezy.com/system/resources/thumbnails/024/748/252/small/smiling-men-enjoy-the-nightlife-listening-to-music-outdoors-generated-by-ai-free-photo.jpg"
+                alt=""
+              />
+            </div>
+            <div class="genre">
+              <p>Punjabi</p>
+              <img
+                src="https://i.scdn.co/image/ab67706c0000da84a5eaa3db836a6095938e58e0"
+                alt=""
+              />
+            </div>
+            <div class="genre">
+              <p>New Release</p>
+              <img
+                src="https://as2.ftcdn.net/v2/jpg/02/54/16/05/1000_F_254160598_xtwvEElN8eJaujCVDDdmS5BKyXB0SC3G.jpg"
+                alt=""
+              />
+            </div>
+            <div class="genre">
+              <p>Hindi</p>
+              <img
+                src="https://i.scdn.co/image/ab67706c0000da846ed1d2550b9fdf9da0dd3e81"
+                alt=""
+              />
+            </div>
+            <div class="genre">
+              <p>Soul</p>
+              <img
+                src="https://cdn.shopify.com/s/files/1/1442/3288/files/social-media-one-music-pic_1024x1024.jpg"
+                alt=""
+              />
+            </div>
+            <div class="genre">
+              <p>Punk</p>
+              <img
+                src="https://cdn.vox-cdn.com/thumbor/8fHlyH3tqfMxAHz0hXowSXaZuis=/2x0:996x746/1200x800/filters:focal(2x0:996x746)/cdn.vox-cdn.com/uploads/chorus_image/image/48729983/shutterstock_93888712.0.0.jpg"
+                alt=""
+              />
+            </div>
+            <div class="genre">
+              <p>Funk</p>
+              <img
+                src="https://www.wilsoncenter.org/sites/default/files/styles/embed_text_block/public/media/uploads/images/Image-AFR-Blog-Music-Senegal-Shutterstock_2162906087_0.png"
+                alt=""
+              />
+            </div>
+            <div class="genre">
+              <p>Band</p>
+              <img
+                src="https://www.wallpaperflare.com/static/652/421/207/mando-diao-band-drum-couch-wallpaper.jpg"
+                alt=""
+              />
+            </div>
+            <div class="genre">
+              <p>Latin</p>
+              <img
+                src="https://i.pinimg.com/1200x/46/9c/c0/469cc0d12df2015dd19168e2c7e8586b.jpg"
+                alt=""
+              />
+            </div>
+            <div class="genre">
+              <p>Chill</p>
+              <img
+                src="https://cdn.theatlantic.com/thumbor/N9jItcE69tO9EHwi52Lg1TTm-2M=/0x156:3000x1844/1600x900/media/img/mt/2017/03/RTR3T4ON/original.jpg"
+                alt=""
+              />
+            </div>
+            <div class="genre">
+              <p>Travel</p>
+              <img
+                src="https://www.verywellmind.com/thmb/rHqM4omYwPdBxhVLSt4P0rx032A=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-583825597-5aa602d518ba01003736d40f.jpg"
+                alt=""
+              />
+            </div>
+            <div class="genre">
+              <p>Instruments</p>
+              <img
+                src="https://www.ed.ac.uk/sites/default/files/styles/landscape_breakpoints_theme_uoe_mobile_1x/public/thumbnails/image/pianogirl.jpg?itok=0BvhNsto"
+                alt=""
+              />
+            </div>
+            <div class="genre">
+              <p>Nature</p>
+              <img
+                src="https://images.unsplash.com/photo-1617803021651-8df9d37672a6?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGVyc29uJTIwd2l0aCUyMGhlYWRwaG9uZXN8ZW58MHx8MHx8fDA%3D"
+                alt=""
+              />
+            </div>
+            <div class="genre">
+              <p>Vibe</p>
+              <img
+                src="https://c.saavncdn.com/012/Vibe-English-2018-20180130005500-500x500.jpg"
+                alt=""
+              />
+            </div>
+            <div class="genre">
+              <p>Cultural</p>
+              <img
+                src="https://www.gaonconnection.com/h-upload/2022/10/13/361905-jr19732.webp"
+                alt=""
+              />
+            </div>
+            <div class="genre">
+              <p>Regional</p>
+              <img
+                src="https://news.cgtn.com/news/3d3d514e3249444f79457a6333566d54/img/e1003b18aaae4234995384cb79400cd5/e1003b18aaae4234995384cb79400cd5.jpg"
+                alt=""
+              />
+            </div>
+            <div class="genre">
+              <p>Pop</p>
+              <img
+                src="https://www.stopthebreaks.com/wp-content/uploads/2021/08/6-lesser-known-benefits-and-disadvantages-of-headphones-2.jpg"
+                alt=""
+              />
+            </div>
+            <div class="genre">
+              <p>Love</p>
+              <img
+                src="https://cdn.ivorytribe.com.au/wp-content/uploads/2022/07/12091957/IT_RW_AliTim_timspence-78.jpg"
+                alt=""
+              />
+            </div>
+            <div class="genre">
+              <p>Game</p>
+              <img src="https://cdn.open-pr.com/T/6/T615468910_g.jpg" alt="" />
+            </div>
+            <div class="genre">
+              <p>Arabic</p>
+              <img
+                src="https://c.saavncdn.com/550/Arabic-Music-English-2017-500x500.jpg"
+                alt=""
+              />
+            </div>
+            <div class="genre">
+              <p>Exercise</p>
+              <img
+                src="https://media.istockphoto.com/id/670724074/photo/exercising-at-the-gym.jpg?s=612x612&w=0&k=20&c=jr9YMXFCD2ON4QsU9-ZdVSUd7tdR4vhx0TXaysfasTc="
+                alt=""
+              />
+            </div>
+            <div class="genre">
+              <p>Gym</p>
+              <img
+                src="https://c.saavncdn.com/268/Workout-Vibes-English-2018-20181211083315-500x500.jpg"
+                alt=""
+              />
+            </div>
+            <div class="genre">
+              <p>Kids</p>
+              <img
+                src="https://us.123rf.com/450wm/photosvit/photosvit1905/photosvit190501471/123310067-music-drives-me-crazy-girl-child-listen-music-with-modern-headphones-kid-little-girl-listen-song.jpg?ver=6"
+                alt=""
+              />
+            </div>
+            <div class="genre">
+              <p>Mash Up</p>
+              <img
+                src="https://media.weddingz.in/images/aceaac1da393feef2fd992c2be61de0a/ek-so-teen-sangeet-songs.jpg"
+                alt=""
+              />
+            </div>
+            <div class="genre">
+              <p>Event</p>
+              <img
+                src="https://www.manhattanbride.com/wp-content/uploads/2019/04/Indian-Traditions39-Ceremony-506-Christopher-Brock-Photography.jpg"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="footer">
+          <div class="foot">
+            <div class="inner">
+              <div>
+                <p>Company</p>
+                <p>About</p>
+                <p>Jobs</p>
+                <p>For the Record</p>
+              </div>
+              <div>
+                <p>Communities</p>
+                <p>For Artists</p>
+                <p>Developers</p>
+                <p>Advertising</p>
+                <p>Investors</p>
+                <p>vendors</p>
+              </div>
+              <div>
+                <p>Useful Links</p>
+                <p>Support</p>
+                <p>Free Mobile App</p>
+              </div>
+            </div>
+            <div>
+              <i class="bi bi-instagram"></i>
+              <i class="bi bi-twitter"></i>
+              <i class="bi bi-facebook"></i>
+            </div>
+          </div>
+          <hr />
+          <div class="terms">
+            <div class="one">
+              <p>Legal</p>
+              <p>Privacy Center</p>
+              <p>Privacy Policy</p>
+              <p>Cookies</p>
+              <p>About Ads</p>
+              <p>Accessibility</p>
+            </div>
+            <div class="second">
+              <p>© 2024 Spotify AB</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
