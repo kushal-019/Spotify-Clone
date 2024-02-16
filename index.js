@@ -12,9 +12,6 @@ let genre = document.querySelectorAll('.genre');
 home_btn.addEventListener("click", function () {
   home_page.style.display = "block";
   home_btn.style.opacity = 1;
-  genre.forEach((block)=>{
-    block.classList.remove('x');
-  });
   search_btn.style.opacity = 0.5;
   search_page.style.display = "none";
   search_bar.style.display = "none";
@@ -40,11 +37,6 @@ search_btn.addEventListener("click", function () {
   right_div.scrollTo({
     top: 0,
     behavior: "smooth",
-  });
-  setTimeout(function(){
-    genre.forEach((block)=>{
-      block.classList.add('x');
-    },40);
   });
 });
 
