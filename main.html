@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify - Web Player: Music for everyone</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="assets/index-favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <div class="container">
+        <div class="leftbox itm">
+            <div class="searchbox">
+                <div class="logo">
+                    <img src="assets/login-logo.png" alt="">
+                </div>
+                <div class="home">
+                    <div class="homeicon icon">
+                        <img src="assets/home.png" alt="">
+                    </div>
+                    <div class="hometxt txt">
+                        <span class="roboto-medium">Home</span>
+                    </div>
+                </div>
+                <div class="search">
+                    <div class="searchicon icon">
+                        <img src="assets/search-icon.svg" alt="">
+                    </div>
+                    <div class="searchtxt txt">
+                        <span class="roboto-medium">Search</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footerlib">
+                <div class="library">
+                    <div class="lib-header">
+                        <div class="lib-header-left">
+                            <div class="stackico">
+                                <img src="assets/stack.png" alt="">
+                            </div>
+                            <div class="stacktxt" title="Collapse your library">
+                                <a href="" class="yourlib roboto-medium">Your Library</a>
+                            </div>
+                        </div>
+                        <div class="lib-header-right">
+                            <a class="addplaylist">+</a>
+                        </div>
+                    </div>
+                    <div class="scrolllist">
+                        <div class="playlist-card">
+                            <p class="l1 roboto-medium">Create your first playlist</p>
+                            <p class="l2 roboto-regular">It's easy, we'll help you</p>
+                            <button class="l3 roboto-medium">Create playlist</button>
+                        </div>
+                        <div class="playlist-card">
+                            <p class="l1 roboto-medium">Let's find some podcasts to follow</p>
+                            <p class="l2 roboto-regular">We'll keep you updated on new episodes</p>
+                            <button class="l3 roboto-medium">Browse podcasts</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="leftfoot">
+                    <ul class="links">
+                        <li><a href="" class="link-itm roboto-regular">Legal</a></li>
+                        <li><a href="" class="link-itm roboto-regular">Saftey & Privacy Center</a></li>
+                        <li><a href="" class="link-itm roboto-regular">Privacy Policy</a></li>
+                        <li><a href="" class="link-itm roboto-regular">Cookies</a></li>
+                        <li><a href="" class="link-itm roboto-regular">About Ads</a></li>
+                        <li><a href="" class="link-itm roboto-regular">Accessibilty</a></li>
+                        <li><a href="" class="link-itm roboto-regular last-itm">Cookies</a></li>
+                    </ul>
+                </div>
+                <div class="lang">
+                    <button class="lang-btn">
+                        <div>
+                            <img src="assets/lang.png" alt="" class="lang-btn-img">
+                        </div>
+                        <div>
+                            <span class="lang-btn-txt roboto-regular">English</span>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="mainbox itm">
+            <div class="nav">
+                <div class="leftnav">
+                    <div>
+                        <img src="assets/next.png" alt="" class="prev-icon play-icon">
+                    </div>
+                    <div>
+                        <img src="assets/next.png" alt="" class="next-icon play-icon">
+                    </div>
+                </div>
+                <div class="rightnav">
+                    <div><button class="acc-btn signup-btn roboto-medium" onclick="window.open('sign_up.html'),window.close('main.html')">Sign up</button></div>
+                    <div><button class="acc-btn login-btn roboto-medium" onclick="window.open('login.html'),window.close('main.html')">Log in</button></div>
+                </div>
+            </div>
+            <div class="main">
+                <div class="mainhead">
+                    <div class="mainhead-h1">
+                        <h2 class="roboto-black">Spotify Playlists</h2>
+                    </div>
+                    <div class="mainhead-h2">
+                        <span class="roboto-medium">Show all</span>
+                    </div>
+                </div>
+                <div class="playlistbar">
+                    <div class="card">
+                        <div class="card-thumbnail">
+                            <img src="assets/cards/1.jpg" alt="">
+                        </div>
+                        <div class="card-heading roboto-regular">
+                            <h3>lofi beats</h3>
+                        </div>
+                        <div class="card-txt roboto-regular">
+                            <p>chill beats, lofi vibes, new tracks every week...</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-thumbnail">
+                            <img src="assets/cards/2.jpg" alt="">
+                        </div>
+                        <div class="card-heading roboto-regular">
+                            <h3>Today's Top Hits</h3>
+                        </div>
+                        <div class="card-txt roboto-regular">
+                            <p>Dua Lipa is on top of Hottest 50!</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-thumbnail">
+                            <img src="assets/cards/3.jpg" alt="">
+                        </div>
+                        <div class="card-heading roboto-regular">
+                            <h3>Chillout Lounge</h3>
+                        </div>
+                        <div class="card-txt roboto-regular">
+                            <p>Just lean back and enjoy relaxed beats.</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-thumbnail">
+                            <img src="assets/cards/4.jpg" alt="">
+                        </div>
+                        <div class="card-heading roboto-regular">
+                            <h3>All out 2020s</h3>
+                        </div>
+                        <div class="card-txt roboto-regular">
+                            <p>The biggest songs of the 2020s</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-thumbnail">
+                            <img src="assets/cards/5.jpg" alt="">
+                        </div>
+                        <div class="card-heading roboto-regular">
+                            <h3>Jazz in the ba..</h3>
+                        </div>
+                        <div class="card-txt roboto-regular">
+                            <p>Soft instrumental jazz for all the activities</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mainfoot">
+                    <div class="refer">
+                        <div>
+                            <ul class="ref1 ref">
+                                <li class="ref-heading roboto-regular">Company</li>
+                                <li><a href="" class="ref-itm roboto-regular">About</a></li>
+                                <li><a href="" class="ref-itm roboto-regular">Jobs</a></li>
+                                <li><a href="" class="ref-itm roboto-regular">For the Record</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <ul class="ref2 ref">
+                                <li class="ref-heading roboto-regular">Communities</li>
+                                <li><a href="" class="ref-itm roboto-regular">For Artists</a></li>
+                                <li><a href="" class="ref-itm roboto-regular">Developers</a></li>
+                                <li><a href="" class="ref-itm roboto-regular">Advertising</a></li>
+                                <li><a href="" class="ref-itm roboto-regular">Investors</a></li>
+                                <li><a href="" class="ref-itm roboto-regular">Vendors</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <ul class="ref3 ref">
+                                <li class="ref-heading roboto-regular">Useful links</li>
+                                <li><a href="" class="ref-itm roboto-regular">Support</a></li>
+                                <li><a href="" class="ref-itm roboto-regular">Free Mobile App</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="social">
+                        <div class="div-ig">
+                            <img src="assets/Social/ig.png" alt="" class="followus ig">
+                        </div>
+                        <div class="div-x">
+                            <img src="assets/Social/twitter.png" alt="" class="followus x">
+                        </div>
+                        <div class="div-fb">
+                            <img src="assets/Social/fb.png" alt="" class="followus fb">
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="copyright roboto-light">
+                    &copy; 2024 Spotify AB
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="alert">
+        <footer>
+            <div class="footer-txt">
+                <p>Preview of Spotify</p>
+                <p>Sign up to get unlimited songs and podcasts with original ads. No credit card needed.</p>
+            </div>
+            <div class="footer-btn">
+                <button class="signupfree" onclick="window.open('signup.html', '_self');">Sign up free</button>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

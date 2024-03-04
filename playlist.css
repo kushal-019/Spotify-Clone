@@ -1,0 +1,158 @@
+.soni_code{
+    display: none;
+}
+
+
+.songs ,.wishing{
+    
+}
+.platlist_detail{
+    display: flex;
+   
+    height:47vh;
+    
+}
+.bg_prit{
+    background-image: linear-gradient(lightgreen, #485741);
+}
+.pritam-singh{
+   display: none;
+}
+.dhanda{
+    display: none;
+}
+.bg_dand{
+     background-image: linear-gradient(rgb(248, 218, 120), #5e582c);
+    
+}
+.yoyo{
+    display:none;
+}
+.bg_yo{
+    background-image: linear-gradient(#fe84b1, #342c5e);
+}
+.Aujla{
+    
+}
+.bg_auj{
+    background-image: linear-gradient(rgb(158, 2, 164), #261228);
+}
+.Anuv{
+    display:none;
+}
+.bg_anuv{
+    background-image: linear-gradient(#13ccf1, #244145);
+}
+.platlist_detail_img{
+    margin:2rem;
+    overflow: hidden;
+    border-radius: 8px;
+}
+.platlist_detail_d{
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    color:white;
+}
+.platlist_detail_head{
+    font-size: 6rem;
+    font-weight:900;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    text-shadow:2px 2px 2px rgb(248, 242, 242);
+}
+.platlist_detail_p{
+    font-size: large;
+}
+.det{
+    display:flex;
+    padding:6px
+
+}
+#title{
+    padding-left: 4px;
+    padding-right: 4px;
+    color:white;
+    font-size: larger;
+    text-decoration: none;
+}
+#title:hover{
+    text-decoration: underline;
+}
+.playlist_access{
+    padding:2rem;
+    
+    color:white;
+    display: flex;
+    justify-content: space-between;
+    background-color:rgb(27, 27, 27)
+}
+.platlist_access_btn{
+    display: flex;
+    
+}
+.e{
+    margin-right: 2rem;
+}
+
+.list{
+    display:grid;
+    grid-template-rows: 20;
+}
+.item_detail{
+    display:flex;
+    align-items: center;
+    height:10vh;
+}
+.item_detail:hover{
+    background-color: rgb(43, 41, 41);
+}
+
+.list_index{
+    height:10vh;
+    width:10vh;
+    text-align: center;
+    padding-top: 22px;
+    font-size:1.5rem;
+    color:gray;
+
+}
+.list_img{
+    height:8vh;
+    width:7.5vh;
+    border-radius:8px;
+    border:1px solid gray;
+
+}
+.list_name{
+    padding-left:3vh;
+    color:white;
+    width:22vw;
+    
+}
+#song_name{
+    font-size:x-large;
+
+}
+#song_list{
+    font-size:medium;
+    color:gray;
+}
+#song_name:hover,#song_list:hover,#abl:hover{
+    color:white;
+    cursor: pointer;
+    text-decoration: underline;
+
+}
+.album{
+    color:gray;
+    width: 17vw;
+    font-size:larger;
+    padding-left:2vh;
+}
+.time{
+    color:gray;
+    font-size: larger;
+    padding: 2vh
+}
+

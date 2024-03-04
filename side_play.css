@@ -1,0 +1,58 @@
+.scroll-bar::-webkit-scrollbar {
+    width: 15px;}
+.scroll-bar::-webkit-scrollbar-track {
+    background-color: rgba(17, 17, 17, 0.562)
+  }
+.scroll-bar::-webkit-scrollbar-thumb {
+    background-color: rgba(91, 90, 97, 0.363);
+  }
+.scroll-bar::-webkit-scrollbar-thumb:hover {
+    background: rgb(64, 63, 63); 
+  }
+  
+.scroll-bar{
+    overflow-y: scroll;
+    position: relative;
+    max-height: 50vh;
+    margin-top: 10px;
+
+}
+
+.container_left{
+    background-color: rgb(17, 17, 17);
+    color: white;
+    padding: 0px;
+
+}
+.side_playlist{
+    border-radius: 1px;
+    
+    display: flex;
+    height: 10vh;
+    padding-bottom: 0px;
+    flex-direction: row;   
+    cursor: pointer;
+}
+.container_left :hover {
+    background-color: rgb(35, 34, 34);
+}
+.imageone{
+    width: 3rem;
+    height: 3rem;
+    max-width: 5rem;
+    border-radius: 50%;    
+    margin-top: 9px;  
+    margin-left: 2px;  
+}   
+
+.subheading{
+    display: flex;
+    margin-left: 10px;
+    margin-top: 5px;
+    font-size: 13px;
+}
+.like{
+    margin-top: 8px;
+    margin-left: 10px;
+    font-size: 17px;
+}
