@@ -34,6 +34,7 @@ function form_submit(){
     }
     if(email.value == 'kushal1835.be22@chitkara.edu.in' && pass.value == '123456'){
         window.close('login.html');
+        window.open("spotify_page.html");
     }
 };
 
