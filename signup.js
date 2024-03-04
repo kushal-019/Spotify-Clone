@@ -6,7 +6,7 @@ let submit_btn = document.querySelectorAll('.submit')[0];
 submit_btn.addEventListener('click', function(e){
     if((email.value === "kushal1835.be22@chitkara.edu.in" && email.type==='email' )||( email.value === '7056059847'&& email.type==='text' )){
         window.close('sign_up.html');
-        window.open("index.html")
+        window.open("spotify_page.html");
     }
     else{
         warning.style.display = 'block';

@@ -1,1682 +1,233 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Spotify Clone</title>
-    <link
-      rel="icon"
-      type="image/x-icon"
-      href="spotify.svg"
-    />
-    <link rel="stylesheet" href="index.css" >
-    <link rel="stylesheet" href="playlist.css">
-    <link rel="stylesheet" href="side_play.css">
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-    />
-  </head>
-  <body >
-    <div class="playbar">
-      <div class="song_desc">
-        <img
-          src="https://i0.wp.com/www.lyricspedia.co.in/wp-content/uploads/2023/08/Screenshot_20230818-123902-02.jpeg?resize=580%2C620&ssl=1"
-          alt=""
-        />
-        <div>
-          <p class="song_name">Song Name</p>
-          <p class="singer_name">Singer Name</p>
-        </div>
-      </div>
-      <div class="controls">
-        <div>
-          <input class="song_bar" type="range" value="0" min="0">
-        </div>
-        <div>
-          <audio id = "song_to_play"  style="display: none" controls>
-            <source  src="karan aujla/mexico.mp3" type="audio/mp3">
-          </audio>
-        <!-- shuffle -->
-        <i class="bi bi-shuffle" id="shuffle"></i>
-        <!-- prev -->
-        <i class="bi bi-skip-start-fill" id="prev_btn"></i>
-        <!-- pause -->
-        <i class="bi bi-play-circle-fill play"></i>
-        <!-- next -->
-        <i class="bi bi-skip-end-fill" id="next_btn"></i>
-        <!-- repeat -->
-        <i class="bi bi-repeat" id="repeat_song_btn"></i>
-      </div>
-      </div>
 
-      <div class="third">
-        <i class="bi bi-list-nested"></i>
-        <i class="bi bi-volume-up mute"></i>
-      </div>
-    </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify - Web Player: Music for everyone</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="assets/index-favicon.ico" type="image/x-icon">
+</head>
+
+<body>
     <div class="container">
-      <div class="left_side">
-        <div class="first">
-          <!-- spotify icon  -->
-          <div class="spotify">
-            <i class="bi bi-spotify"></i>
-            <p>Spotify</p>
-          </div>
-          <div class="home">
-            <!-- home icon -->
-            <i class="bi bi-house"></i>
-            <p>Home</p>
-          </div>
-          <div class="search">
-            <!-- search icon -->
-            <i class="bi bi-search"></i>
-            <p>Search</p>
-          </div>
-        </div>
-        <div class="second">
-          <div class="top">
-            <div class="lib">
-              <!-- library icon -->
-              <i class="bi bi-collection"></i>
-              <p class="para">Your Library</p>
-            </div>
-            <div class="but para">
-              <!-- add button -->
-              <i class="bi bi-plus-lg"></i>
-              <!-- next arrow -> -->
-              <i class="bi bi-arrow-right"></i>
-            </div>
-          </div>
-          <div class="middle para">
-            <span id="playlst"><p class="name">Playlist</p></span>
-            <span><p class="desc">Artist</p></span>
-          </div>
-          <div class="recent para">
-            <!-- search icon -->
-            <i class="bi bi-search"></i>
-            <!-- icon for recent list  -->
-            <i class="bi bi-list-ul"></i>
-          </div>
-          <div class="scroll-bar">
-            <div class="container_left">
-              <div class="side_playlist">
-                <img
-                  class="imageone"
-                  src="https://i.scdn.co/image/ab6761610000101f9973157bdaedef3f77ef8e13"
-                  alt="Image"
-                />
-                <div class="info">
-                  <div class="like">Sidhu Moosewala</div>
-                  <div class="subheading">
-                    <p>Playlist . Spotify</p>
-                  </div>
+        <div class="leftbox itm">
+            <div class="searchbox">
+                <div class="logo">
+                    <img src="assets/login-logo.png" alt="">
                 </div>
-              </div>
-            </div>
-            <div class="container_left">
-              <div class="side_playlist">
-                <img
-                  class="imageone"
-                  src="https://i.scdn.co/image/ab67706f000000025b86750761a8b78aac8a6d2a"
-                  alt="Image"
-                />
-                <div class="info">
-                  <div class="like">AP Dhillon</div>
-                  <div class="subheading">
-                    <p>Artist</p>
-                  </div>
+                <div class="home">
+                    <div class="homeicon icon">
+                        <img src="assets/home.png" alt="">
+                    </div>
+                    <div class="hometxt txt">
+                        <span class="roboto-medium">Home</span>
+                    </div>
                 </div>
-              </div>
-            </div>
-            <div class="container_left">
-              <div class="side_playlist">
-                <img
-                  class="imageone"
-                  src="https://i.scdn.co/image/ab67706c0000dec549ed9cb33efd8a4e2fb9804e"
-                  alt="Image"
-                />
-                <div class="info">
-                  <div class="like">Calm Ocean</div>
-                  <div class="subheading">
-                    <p>Playlist .Spotify</p>
-                  </div>
+                <div class="search">
+                    <div class="searchicon icon">
+                        <img src="assets/search-icon.svg" alt="">
+                    </div>
+                    <div class="searchtxt txt">
+                        <span class="roboto-medium">Search</span>
+                    </div>
                 </div>
-              </div>
             </div>
-            <div class="container_left">
-              <div class="side_playlist">
-                <img
-                  class="imageone"
-                  src="https://i.scdn.co/image/ab6761610000101fec5e2300d98a5a6a98fffb16"
-                  alt="Image"
-                />
-                <div class="info">
-                  <div class="like">Feed Your Soul</div>
-                  <div class="subheading">
-                    <p>Artist</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="container_left">
-              <div class="side_playlist">
-                <img
-                  class="imageone"
-                  src="https://i.scdn.co/image/ab6761610000101faf94287a28816f8bfb8776e1"
-                  alt="Image"
-                />
-                <div class="info">
-                  <div class="like">Karan Aujla</div>
-                  <div class="subheading">
-                    <p>Artist</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="container_left">
-              <div class="side_playlist">
-                <img
-                  class="imageone"
-                  src="https://i.scdn.co/image/5e017e77847f99cd19302540c480b41b48dafc26"
-                  alt="Image"
-                />
-                <div class="info">
-                  <div class="like">Tiny leaps,Big Changes</div>
-                  <div class="subheading">
-                    <p>Podcast . Gregg Clunis</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="container_left">
-              <div class="side_playlist">
-                <img
-                  class="imageone"
-                  src="https://i.scdn.co/image/ab6761610000101fed219e300b4044714ab356da"
-                  alt="Image"
-                />
-                <div class="info">
-                  <div class="like">Jass Manak</div>
-                  <div class="subheading">
-                    <p>Artist</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="container_left">
-              <div class="side_playlist">
-                <img
-                  class="imageone"
-                  src="https://i.scdn.co/image/ab6761610000101f920dc1f617550de8388f368e"
-                  alt="Image"
-                />
-                <div class="info">
-                  <div class="like">Imagine Dragons</div>
-                  <div class="subheading">
-                    <p>Artist</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="container_left">
-              <div class="side_playlist">
-                <img
-                  class="imageone"
-                  src="https://i.scdn.co/image/ab6761610000101ffc043bea91ac91c222d235c9"
-                  alt="Image"
-                />
-                <div class="info">
-                  <div class="like">Diljit Dosanjh</div>
-                  <div class="subheading">
-                    <p>Artist</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="container_left">
-              <div class="side_playlist">
-                <img
-                  class="imageone"
-                  src="https://i.scdn.co/image/ab6761610000101fcb6926f44f620555ba444fca"
-                  alt="Image"
-                />
-                <div class="info">
-                  <div class="like">Pritam</div>
-                  <div class="subheading">
-                    <p>Artist</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="container_left">
-              <div class="side_playlist">
-                <img
-                  class="imageone"
-                  src="https://i.scdn.co/image/ab6761610000101f0261696c5df3be99da6ed3f3"
-                  alt="Image"
-                />
-                <div class="info">
-                  <div class="like">Arijit Singh</div>
-                  <div class="subheading">
-                    <p>Artist</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-        </div>
-      </div>
 
-      <div class="right_side">
-        <div class="credentials">
-          <div class="pointer">
-            <!-- prev arrow -->
-            <i class="bi bi-chevron-left"></i>
-            <!-- next arrow -->
-            <i class="bi bi-chevron-right"></i>
-
-            <div class="searchbar">
-              <!-- search icon -->
-              <i class="bi bi-search"></i>
-              <input
-                type="text"
-                placeholder="   What do you want to listen to?"
-              />
-            </div>
-          </div>
-
-          <div class="account">
-            <!-- notification icon -->
-            <!-- <button id="btn1">Sign Up</button>
-            <button id="btn2">Log in</button> -->
-            <i class="bi bi-bell "></i>
-
-            <!-- account icon  -->
-            <i class="bi bi-person "></i>
-          </div>
-        </div>
-
-
-        <div class="home_page_display">
-          <div class="soni_code">
-            <div class="playlist roboto-regular pritam-singh">
-              <div class="platlist_detail bg_prit">
-  
-                <img class="platlist_detail_img " src="img/prit.jpg" alt="">
-  
-                <div class="platlist_detail_d">
-                  <p class="platlist_detail_p">spotify</p>
-                  <h1 class="platlist_detail_head">Pritam</h1>
-                  <p class="platlist_detail_p">
-                    chill beats, lofi vibes, new tracks every week...
-                  </p>
-                  <div class="det">
-                    <img src="https://cdn-icons-png.flaticon.com/512/174/174872.png" alt="" style="height:20px">
-                    <a href="index.html" id="title">spotify</a>
-                    <ul style="display:flex ;list-style: inside;">
-                      <li>5,246,526 likes ,</li>
-                      <li>750 songs , </li>
-                      <li>over 24 hr </li>
+            <div class="footerlib">
+                <div class="library">
+                    <div class="lib-header">
+                        <div class="lib-header-left">
+                            <div class="stackico">
+                                <img src="assets/stack.png" alt="">
+                            </div>
+                            <div class="stacktxt" title="Collapse your library">
+                                <a href="" class="yourlib roboto-medium">Your Library</a>
+                            </div>
+                        </div>
+                        <div class="lib-header-right">
+                            <a class="addplaylist">+</a>
+                        </div>
+                    </div>
+                    <div class="scrolllist">
+                        <div class="playlist-card">
+                            <p class="l1 roboto-medium">Create your first playlist</p>
+                            <p class="l2 roboto-regular">It's easy, we'll help you</p>
+                            <button class="l3 roboto-medium">Create playlist</button>
+                        </div>
+                        <div class="playlist-card">
+                            <p class="l1 roboto-medium">Let's find some podcasts to follow</p>
+                            <p class="l2 roboto-regular">We'll keep you updated on new episodes</p>
+                            <button class="l3 roboto-medium">Browse podcasts</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="leftfoot">
+                    <ul class="links">
+                        <li><a href="" class="link-itm roboto-regular">Legal</a></li>
+                        <li><a href="" class="link-itm roboto-regular">Saftey & Privacy Center</a></li>
+                        <li><a href="" class="link-itm roboto-regular">Privacy Policy</a></li>
+                        <li><a href="" class="link-itm roboto-regular">Cookies</a></li>
+                        <li><a href="" class="link-itm roboto-regular">About Ads</a></li>
+                        <li><a href="" class="link-itm roboto-regular">Accessibilty</a></li>
+                        <li><a href="" class="link-itm roboto-regular last-itm">Cookies</a></li>
                     </ul>
-  
-                  </div>
                 </div>
-              </div>
-  
-              <div class="playlist_access">
-                <div class="platlist_access_btn">
-                  <p class="e">play</p>
-                  <p class="e">heart</p>
-                  <p class="e">dot</p>
+                <div class="lang">
+                    <button class="lang-btn">
+                        <div>
+                            <img src="assets/lang.png" alt="" class="lang-btn-img">
+                        </div>
+                        <div>
+                            <span class="lang-btn-txt roboto-regular">English</span>
+                        </div>
+                    </button>
                 </div>
-                <div class="platlist_access_list">
-                  <p>list</p>
-                </div>
-              </div>
-              <div class="list roboto-regular">
-                <div class="List_index item_detail">
-                  <div class="list_index">#</div>
-                  <div class="album" style="width:25vw">
-                    Title
-                  </div>
-                  <div class="album" ">Album</div>
-                          <div class=" album">Date Added</div>
-                  <img
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOs_TrsdBIw1jUmv6PY1_LcmzFCSlYXZl4yq8iNS8ARw&s"
-                    style="padding-left:2rem;height:30px" alt="">
-                </div>
-                <div class="item_detail">
-                  <div class="list_index">1</div>
-                  <img class="list_img"
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZQeI_20uoUYWhDyWVck4j1ISoEtL94T9E4w&usqp=CAU"
-                    alt="">
-                  <div class="list_name">
-                    <p id="song_name">Lehra Do</p>
-                    <p id="song_list">
-                      83
-                    </p>
-                  </div>
-                  <div class="album" id="abl">Pritam</div>
-                  <div class="album">2 week ago</div>
-                  <div class="time">2:38</div>
-                </div>
-                <div class="item_detail">
-                  <div class="list_index">2</div>
-                  <img class="list_img"
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQz1pKzCrdKhoErPLkuaVHtsk3EEzVQdUPQxQ&usqp=CAU"
-                    alt="">
-                  <div class="list_name">
-                    <p id="song_name">Ya Ali</p>
-                    <p id="song_list">
-                      All hhis Hits
-                    </p>
-                  </div>
-                  <div class="album" id="abl">Pritam</div>
-                  <div class="album">2 week ago</div>
-                  <div class="time">8:23</div>
-                </div>
-                <div class="item_detail roboto-regular">
-                  <div class="list_index">3</div>
-                  <img class="list_img"
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCSvWLzGaEiZpym5X9zpxXqycPGzEE5tauuA&usqp=CAU"
-                    alt="">
-                  <div class="list_name">
-                    <p id="song_name">Naina</p>
-                    <p id="song_list">
-                      Dangal
-                    </p>
-                  </div>
-                  <div class="album" id="abl">Pritam</div>
-                  <div class="album">3 week ago</div>
-                  <div class="time">6:45</div>
-                </div>
-                <div class="item_detail">
-                  <div class="list_index">4</div>
-                  <img class="list_img"
-                    src="data:image/jpeg;base64,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"
-                    alt="">
-                  <div class="list_name">
-                    <p id="song_name">Aashiyan</p>
-                    <p id="song_list">
-                      barfi
-                    </p>
-                  </div>
-                  <div class="album" id="abl">Pritam</div>
-                  <div class="album">2 week ago</div>
-                  <div class="time">1:29</div>
-                </div>
-                <div class="item_detail">
-                  <div class="list_index">5</div>
-                  <img class="list_img"
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXTMVxn_L2QxQ_9iAjckzozr0uCx9ABxZYXg&usqp=CAU"
-                    alt="">
-                  <div class="list_name">
-                    <p id="song_name">What Jhumka?</p>
-                    <p id="song_list">
-                      Rani Aur Prem Katha
-                    </p>
-                  </div>
-                  <div class="album" id="abl">Pritam</div>
-                  <div class="album">4 week ago</div>
-                  <div class="time">4:48</div>
-                </div>
-                <div class="item_detail">
-                  <div class="list_index">6</div>
-                  <img class="list_img"
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVSTpkRPkUqryvAqgqNxrq0wVXALjcrbvc8g&usqp=CAU"
-                    alt="">
-                  <div class="list_name">
-                    <p id="song_name">Billo Rani</p>
-                    <p id="song_list">
-                      Dhan Dhana Dhan Goal
-                    </p>
-                  </div>
-                  <div class="album" id="abl">Pritam</div>
-                  <div class="album">2 week ago</div>
-                  <div class="time">2:11</div>
-                </div>
-  
-                <p class="headings">You might also like</p>
-  
-                <div class="song">
-                  <div class="template" id="pritam" onmouseover="showPlayIcon(this)" onmouseout="hidePlayIcon(this)">
-                    <img src="https://i.scdn.co/image/ab6761610000e5ebcb6926f44f620555ba444fca" alt="" />
-                    <i class="bi bi-play-circle-fill green_appearing_button"></i>
-                    <p>Pritam</p>
-                    <p>Artist</p>
-                  </div>
-                  <div class="template " onmouseover="showPlayIcon(this)" onmouseout="hidePlayIcon(this)">
-                    <img src="https://www.sarkarinaukriexams.com/images/bio/1703740002-bio.png" alt="" />
-                    <i class="bi bi-play-circle-fill green_appearing_button"></i>
-                    <p>Dhanda Nyoliwala</p>
-                    <p>Artist</p>
-                  </div>
-                  <div class="template" onmouseover="showPlayIcon(this)" onmouseout="hidePlayIcon(this)">
-                    <img src="https://static.india.com/wp-content/uploads/2023/02/Honey-Singh-2.jpg" alt="" />
-                    <i class="bi bi-play-circle-fill green_appearing_button"></i>
-                    <p>Yo Yo Honey Singh</p>
-                    <p>Artist</p>
-                  </div>
-                  <div class="template" onmouseover="showPlayIcon(this)" onmouseout="hidePlayIcon(this)">
-                    <img
-                      src="https://yt3.googleusercontent.com/ytc/AIf8zZTtB8M4MHDSXJvaDkpbCDKttlx2gs71nHxwEgq3pg=s900-c-k-c0x00ffffff-no-rj"
-                      alt="" />
-                    <i class="bi bi-play-circle-fill green_appearing_button"></i>
-                    <p>Anuv jain</p>
-                    <p>Artist</p>
-                  </div>
-                  <div class="template" onmouseover="showPlayIcon(this)" onmouseout="hidePlayIcon(this)">
-                    <img
-                      src="https://i0.wp.com/www.lyricspedia.co.in/wp-content/uploads/2023/08/Screenshot_20230818-123902-02.jpeg?resize=580%2C620&ssl=1"
-                      alt="" />
-                    <i class="bi bi-play-circle-fill green_appearing_button"></i>
-                    <p>Karan Aujla</p>
-                    <p>Artist</p>
-                  </div>
-                </div>
-              </div>
-  
             </div>
-            <div class="playlist roboto-regular dhanda">
-              <div class="platlist_detail bg_dand">
-  
-                <img class="platlist_detail_img " src="img/danda.jpg" alt="">
-  
-                <div class="platlist_detail_d">
-                  <p class="platlist_detail_p">spotify</p>
-                  <h1 class="platlist_detail_head">Dhanda Nyoliwala</h1>
-                  <p class="platlist_detail_p">
-                    chill beats, lofi vibes, new tracks every week...
-                  </p>
-                  <div class="det">
-                    <img src="https://cdn-icons-png.flaticon.com/512/174/174872.png" alt="" style="height:20px">
-                    <a href="index.html" id="title">spotify</a>
-                    <ul style="display:flex ;list-style: inside;">
-                      <li>5,246,526 likes ,</li>
-                      <li>750 songs , </li>
-                      <li>over 24 hr </li>
-                    </ul>
-  
-                  </div>
-                </div>
-              </div>
-  
-              <div class="playlist_access">
-                <div class="platlist_access_btn">
-                  <p class="e">play</p>
-                  <p class="e">heart</p>
-                  <p class="e">dot</p>
-                </div>
-                <div class="platlist_access_list">
-                  <p>list</p>
-                </div>
-              </div>
-              <div class="list roboto-regular">
-                <div class="List_index item_detail">
-                  <div class="list_index">#</div>
-                  <div class="album" style="width:25vw">
-                    Title
-                  </div>
-                  <div class="album" ">Album</div>
-                          <div class=" album">Date Added</div>
-                  <img
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOs_TrsdBIw1jUmv6PY1_LcmzFCSlYXZl4yq8iNS8ARw&s"
-                    style="padding-left:2rem;height:30px" alt="">
-                </div>
-                <div class="item_detail">
-                  <div class="list_index">1</div>
-                  <img class="list_img"
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRINvCQQAlrPap_7frV-MBvyn3ethAhD5W-7g&usqp=CAU"
-                    alt="">
-                  <div class="list_name">
-                    <p id="song_name">Up to U</p>
-                    <p id="song_list">
-                      Up to U
-                    </p>
-                  </div>
-                  <div class="album" id="abl">Dhanda Nyaliwala</div>
-                  <div class="album">2 week ago</div>
-                  <div class="time">2:38</div>
-                </div>
-                <div class="item_detail">
-                  <div class="list_index">2</div>
-                  <img class="list_img"
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBUk9BF36VMSo6c19ioj3-c5eyK7N8bdR5dw&usqp=CAU"
-                    alt="">
-                  <div class="list_name">
-                    <p id="song_name">Chora Baba Ka</p>
-                    <p id="song_list">
-                      Chora Baba Ka
-                    </p>
-                  </div>
-                  <div class="album" id="abl">Dhanda Nyaliwala</div>
-                  <div class="album">2 week ago</div>
-                  <div class="time">8:23</div>
-                </div>
-                <div class="item_detail roboto-regular">
-                  <div class="list_index">3</div>
-                  <img class="list_img"
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtx6WrfYyFYSRCQ8ZysxErovvol_-tZEDhUQ&usqp=CAU"
-                    alt="">
-                  <div class="list_name">
-                    <p id="song_name">Jat Clan</p>
-                    <p id="song_list">
-                      Jat Clan
-                    </p>
-                  </div>
-                  <div class="album" id="abl">Dhanda Nyaliwala</div>
-                  <div class="album">3 week ago</div>
-                  <div class="time">6:45</div>
-                </div>
-                <div class="item_detail">
-                  <div class="list_index">4</div>
-                  <img class="list_img"
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBWHkKArUkawdFcSUZZTTYDizh3Juho54bFA&usqp=CAU"
-                    alt="">
-                  <div class="list_name">
-                    <p id="song_name">No Mercy</p>
-                    <p id="song_list">
-                      No Mercy
-                    </p>
-                  </div>
-                  <div class="album" id="abl">Dhanda Nyaliwala</div>
-                  <div class="album">2 week ago</div>
-                  <div class="time">1:29</div>
-                </div>
-                <div class="item_detail">
-                  <div class="list_index">5</div>
-                  <img class="list_img"
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbRvOHDgt9yaDMAZGJWapQQ5Ke4kdqThclhw&usqp=CAU"
-                    alt="">
-                  <div class="list_name">
-                    <p id="song_name">Death Row</p>
-                    <p id="song_list">
-                      Mar dala
-                    </p>
-                  </div>
-                  <div class="album" id="abl">Dhanda Nyaliwala</div>
-                  <div class="album">4 week ago</div>
-                  <div class="time">4:48</div>
-                </div>
-                <div class="item_detail">
-                  <div class="list_index">6</div>
-                  <img class="list_img"
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRatmUxsYD9aA1b3Qi4aW_yskTWHO8Bg9JJ7g&usqp=CAU"
-                    alt="">
-                  <div class="list_name">
-                    <p id="song_name">Reamo</p>
-                    <p id="song_list">
-                      4 Days
-                    </p>
-                  </div>
-                  <div class="album" id="abl">Dhanda Nyaliwala</div>
-                  <div class="album">2 week ago</div>
-                  <div class="time">2:11</div>
-                </div>
-  
-                <p class="headings">You might also like</p>
-  
-                <div class="song">
-                  <div class="template" id="pritam" onmouseover="showPlayIcon(this)" onmouseout="hidePlayIcon(this)">
-                    <img src="https://i.scdn.co/image/ab6761610000e5ebcb6926f44f620555ba444fca" alt="" />
-                    <i class="bi bi-play-circle-fill green_appearing_button"></i>
-                    <p>Pritam</p>
-                    <p>Artist</p>
-                  </div>
-                  <div class="template" onmouseover="showPlayIcon(this)" onmouseout="hidePlayIcon(this)">
-                    <img src="https://www.sarkarinaukriexams.com/images/bio/1703740002-bio.png" alt="" />
-                    <i class="bi bi-play-circle-fill green_appearing_button"></i>
-                    <p>Dhanda Nyoliwala</p>
-                    <p>Artist</p>
-                  </div>
-                  <div class="template" onmouseover="showPlayIcon(this)" onmouseout="hidePlayIcon(this)">
-                    <img src="https://static.india.com/wp-content/uploads/2023/02/Honey-Singh-2.jpg" alt="" />
-                    <i class="bi bi-play-circle-fill green_appearing_button"></i>
-                    <p>Yo Yo Honey Singh</p>
-                    <p>Artist</p>
-                  </div>
-                  <div class="template" onmouseover="showPlayIcon(this)" onmouseout="hidePlayIcon(this)">
-                    <img
-                      src="https://yt3.googleusercontent.com/ytc/AIf8zZTtB8M4MHDSXJvaDkpbCDKttlx2gs71nHxwEgq3pg=s900-c-k-c0x00ffffff-no-rj"
-                      alt="" />
-                    <i class="bi bi-play-circle-fill green_appearing_button"></i>
-                    <p>Anuv jain</p>
-                    <p>Artist</p>
-                  </div>
-                  <div class="template" onmouseover="showPlayIcon(this)" onmouseout="hidePlayIcon(this)">
-                    <img
-                      src="https://i0.wp.com/www.lyricspedia.co.in/wp-content/uploads/2023/08/Screenshot_20230818-123902-02.jpeg?resize=580%2C620&ssl=1"
-                      alt="" />
-                    <i class="bi bi-play-circle-fill green_appearing_button"></i>
-                    <p>Karan Aujla</p>
-                    <p>Artist</p>
-                  </div>
-                </div>
-              </div>
-  
-            </div>
-            <div class="playlist roboto-regular yoyo">
-              <div class="platlist_detail bg_yo">
-  
-                <img class="platlist_detail_img " src="img/yoyo.jpg" alt="">
-  
-                <div class="platlist_detail_d">
-                  <p class="platlist_detail_p">spotify</p>
-                  <h1 class="platlist_detail_head">Yo Yo Honey Singh</h1>
-                  <p class="platlist_detail_p">
-                    chill beats, lofi vibes, new tracks every week...
-                  </p>
-                  <div class="det">
-                    <img src="https://cdn-icons-png.flaticon.com/512/174/174872.png" alt="" style="height:20px">
-                    <a href="index.html" id="title">spotify</a>
-                    <ul style="display:flex ;list-style: inside;">
-                      <li>5,246,526 likes ,</li>
-                      <li>750 songs , </li>
-                      <li>over 24 hr </li>
-                    </ul>
-  
-                  </div>
-                </div>
-              </div>
-  
-              <div class="playlist_access">
-                <div class="platlist_access_btn">
-                  <p class="e">play</p>
-                  <p class="e">heart</p>
-                  <p class="e">dot</p>
-                </div>
-                <div class="platlist_access_list">
-                  <p>list</p>
-                </div>
-              </div>
-              <div class="list roboto-regular">
-                <div class="List_index item_detail">
-                  <div class="list_index">#</div>
-                  <div class="album" style="width:25vw">
-                    Title
-                  </div>
-                  <div class="album" ">Album</div>
-                          <div class=" album">Date Added</div>
-                  <img
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOs_TrsdBIw1jUmv6PY1_LcmzFCSlYXZl4yq8iNS8ARw&s"
-                    style="padding-left:2rem;height:30px" alt="">
-                </div>
-                <div class="item_detail">
-                  <div class="list_index">1</div>
-                  <img class="list_img"
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYphvsjPEwqMmdOvZ7e2OBbbzvCBydQ3mzEQ&usqp=CAU"
-                    alt="">
-                  <div class="list_name">
-                    <p id="song_name">Blue Eyes</p>
-                    <p id="song_list">
-                     california
-                    </p>
-                  </div>
-                  <div class="album" id="abl">Yo Yo Honey Singh</div>
-                  <div class="album">2 week ago</div>
-                  <div class="time">2:38</div>
-                </div>
-                <div class="item_detail">
-                  <div class="list_index">2</div>
-                  <img class="list_img"
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEjOhOx3RO0TJWXgNlaJ40ZoQpKVdwkF7TUQ&usqp=CAU"
-                    alt="">
-                  <div class="list_name">
-                    <p id="song_name">Desi Kalakar</p>
-                    <p id="song_list">
-                      International Villagers 
-                    </p>
-                  </div>
-                  <div class="album" id="abl">Yo Yo Honey Singh</div>
-                  <div class="album">2 week ago</div>
-                  <div class="time">8:23</div>
-                </div>
-                <div class="item_detail roboto-regular">
-                  <div class="list_index">3</div>
-                  <img class="list_img"
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ36m-GRlnFxMyC3YjpgVdOrB2mMM2lcLQa7Q&usqp=CAU"
-                    alt="">
-                  <div class="list_name">
-                    <p id="song_name">Brown Rang</p>
-                    <p id="song_list">
-                      Jatt clann
-                    </p>
-                  </div>
-                  <div class="album" id="abl">Yo Yo Honey Singh</div>
-                  <div class="album">3 week ago</div>
-                  <div class="time">6:45</div>
-                </div>
-                <div class="item_detail">
-                  <div class="list_index">4</div>
-                  <img class="list_img"
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSa_HP6E7GEN-RV-JjHZTWdXRjVEaQtnAqpbg&usqp=CAU"
-                    alt="">
-                  <div class="list_name">
-                    <p id="song_name">Rani Tu Main Raja</p>
-                    <p id="song_list">
-                      Son of Sardar
-                    </p>
-                  </div>
-                  <div class="album" id="abl">Yo Yo Honey Singh</div>
-                  <div class="album">2 week ago</div>
-                  <div class="time">1:29</div>
-                </div>
-                <div class="item_detail">
-                  <div class="list_index">5</div>
-                  <img class="list_img"
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlEJAIBEggkNzL2kw_P-eQyFIVZ5XNnRhNdg&usqp=CAU"
-                    alt="">
-                  <div class="list_name">
-                    <p id="song_name">pani pani</p>
-                    <p id="song_list">
-                      water base
-                    </p>
-                  </div>
-                  <div class="album" id="abl">Yo Yo Honey Singh</div>
-                  <div class="album">4 week ago</div>
-                  <div class="time">4:48</div>
-                </div>
-                <div class="item_detail">
-                  <div class="list_index">6</div>
-                  <img class="list_img"
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8fN5_Qp2oyQjRwOHzEcAIlev5xrBedy5Hbw&usqp=CAU"
-                    alt="">
-                  <div class="list_name">
-                    <p id="song_name">Achko Machko</p>
-                    <p id="song_list">
-                      4 Days
-                    </p>
-                  </div>
-                  <div class="album" id="abl">Yo Yo Honey Singh</div>
-                  <div class="album">2 week ago</div>
-                  <div class="time">2:11</div>
-                </div>
-  
-                <p class="headings">You might also like</p>
-  
-                <div class="song">
-                  <div class="template" id="pritam" onmouseover="showPlayIcon(this)" onmouseout="hidePlayIcon(this)">
-                    <img src="https://i.scdn.co/image/ab6761610000e5ebcb6926f44f620555ba444fca" alt="" />
-                    <i class="bi bi-play-circle-fill green_appearing_button"></i>
-                    <p>Pritam</p>
-                    <p>Artist</p>
-                  </div>
-                  <div class="template" onmouseover="showPlayIcon(this)" onmouseout="hidePlayIcon(this)">
-                    <img src="https://www.sarkarinaukriexams.com/images/bio/1703740002-bio.png" alt="" />
-                    <i class="bi bi-play-circle-fill green_appearing_button"></i>
-                    <p>Dhanda Nyoliwala</p>
-                    <p>Artist</p>
-                  </div>
-                  <div class="template" onmouseover="showPlayIcon(this)" onmouseout="hidePlayIcon(this)">
-                    <img src="https://static.india.com/wp-content/uploads/2023/02/Honey-Singh-2.jpg" alt="" />
-                    <i class="bi bi-play-circle-fill green_appearing_button"></i>
-                    <p>Yo Yo Honey Singh</p>
-                    <p>Artist</p>
-                  </div>
-                  <div class="template" onmouseover="showPlayIcon(this)" onmouseout="hidePlayIcon(this)">
-                    <img
-                      src="https://yt3.googleusercontent.com/ytc/AIf8zZTtB8M4MHDSXJvaDkpbCDKttlx2gs71nHxwEgq3pg=s900-c-k-c0x00ffffff-no-rj"
-                      alt="" />
-                    <i class="bi bi-play-circle-fill green_appearing_button"></i>
-                    <p>Anuv jain</p>
-                    <p>Artist</p>
-                  </div>
-                  <div class="template" onmouseover="showPlayIcon(this)" onmouseout="hidePlayIcon(this)">
-                    <img
-                      src="https://i0.wp.com/www.lyricspedia.co.in/wp-content/uploads/2023/08/Screenshot_20230818-123902-02.jpeg?resize=580%2C620&ssl=1"
-                      alt="" />
-                    <i class="bi bi-play-circle-fill green_appearing_button"></i>
-                    <p>Karan Aujla</p>
-                    <p>Artist</p>
-                  </div>
-                </div>
-              </div>
-  
-            </div>
-            <div class="playlist roboto-regular Anuv">
-              <div class="platlist_detail bg_anuv">
-  
-                <img class="platlist_detail_img " src="img/anuv.jpg" alt="">
-  
-                <div class="platlist_detail_d">
-                  <p class="platlist_detail_p">spotify</p>
-                  <h1 class="platlist_detail_head">Anuv Jain</h1>
-                  <p class="platlist_detail_p">
-                    chill beats, lofi vibes, new tracks every week...
-                  </p>
-                  <div class="det">
-                    <img src="https://cdn-icons-png.flaticon.com/512/174/174872.png" alt="" style="height:20px">
-                    <a href="index.html" id="title">spotify</a>
-                    <ul style="display:flex ;list-style: inside;">
-                      <li>5,246,526 likes ,</li>
-                      <li>750 songs , </li>
-                      <li>over 24 hr </li>
-                    </ul>
-  
-                  </div>
-                </div>
-              </div>
-  
-              <div class="playlist_access">
-                <div class="platlist_access_btn">
-                  <p class="e">play</p>
-                  <p class="e">heart</p>
-                  <p class="e">dot</p>
-                </div>
-                <div class="platlist_access_list">
-                  <p>list</p>
-                </div>
-              </div>
-              <div class="list roboto-regular">
-                <div class="List_index item_detail">
-                  <div class="list_index">#</div>
-                  <div class="album" style="width:25vw">
-                    Title
-                  </div>
-                  <div class="album" ">Album</div>
-                          <div class=" album">Date Added</div>
-                  <img
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOs_TrsdBIw1jUmv6PY1_LcmzFCSlYXZl4yq8iNS8ARw&s"
-                    style="padding-left:2rem;height:30px" alt="">
-                </div>
-                <div class="item_detail">
-                  <div class="list_index">1</div>
-                  <img class="list_img"
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDjC92f3ue74YOj9W5QpIzXLDnRT6ZPgPKIA&usqp=CAU"
-                    alt="">
-                  <div class="list_name">
-                    <p id="song_name">Husn</p>
-                    <p id="song_list">
-                      Husn
-                    </p>
-                  </div>
-                  <div class="album" id="abl">Anuv Jain</div>
-                  <div class="album">2 week ago</div>
-                  <div class="time">2:38</div>
-                </div>
-                <div class="item_detail">
-                  <div class="list_index">2</div>
-                  <img class="list_img"
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXEv2W_wNG1I14hhBlmczdS_m2xCkLIMLEvg&usqp=CAU"
-                    alt="">
-                  <div class="list_name">
-                    <p id="song_name">Alag Aasmaan</p>
-                    <p id="song_list">
-                      Alag Aasmaan
-                    </p>
-                  </div>
-                  <div class="album" id="abl">Anuv Jain</div>
-                  <div class="album">2 week ago</div>
-                  <div class="time">8:23</div>
-                </div>
-                <div class="item_detail roboto-regular">
-                  <div class="list_index">3</div>
-                  <img class="list_img"
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDBwEqARaaEha2_eiIKobxA_B7R33kKVLhoA&usqp=CAU"
-                    alt="">
-                  <div class="list_name">
-                    <p id="song_name">Maula</p>
-                    <p id="song_list">
-                      Maula
-                    </p>
-                  </div>
-                  <div class="album" id="abl">Anuv Jain</div>
-                  <div class="album">3 week ago</div>
-                  <div class="time">6:45</div>
-                </div>
-                <div class="item_detail">
-                  <div class="list_index">4</div>
-                  <img class="list_img"
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUmX4ykH7dJpOJa1wQbXNXT4WTB027EQCOUw&usqp=CAU"
-                    alt="">
-                  <div class="list_name">
-                    <p id="song_name">Riha</p>
-                    <p id="song_list">
-                      Riha
-                    </p>
-                  </div>
-                  <div class="album" id="abl">Anuv Jain</div>
-                  <div class="album">2 week ago</div>
-                  <div class="time">1:29</div>
-                </div>
-                <div class="item_detail">
-                  <div class="list_index">5</div>
-                  <img class="list_img"
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrUnUSlZYq-xSs0pCfNrQthGFNn_nsUkwwAQ&usqp=CAU"
-                    alt="">
-                  <div class="list_name">
-                    <p id="song_name">Gul</p>
-                    <p id="song_list">
-                      Gul
-                    </p>
-                  </div>
-                  <div class="album" id="abl">Anuv Jain</div>
-                  <div class="album">4 week ago</div>
-                  <div class="time">4:48</div>
-                </div>
-                <div class="item_detail">
-                  <div class="list_index">6</div>
-                  <img class="list_img"
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReFtK3KLMJgbWtuQUpRp4quOUFCVMr_LbOvQ&usqp=CAU"
-                    alt="">
-                  <div class="list_name">
-                    <p id="song_name">Mishri</p>
-                    <p id="song_list">
-                      Mishri
-                    </p>
-                  </div>
-                  <div class="album" id="abl">Anuv Jain</div>
-                  <div class="album">2 week ago</div>
-                  <div class="time">2:11</div>
-                </div>
-  
-                <p class="headings">You might also like</p>
-  
-                <div class="song">
-                  <div class="template" id="pritam" onmouseover="showPlayIcon(this)" onmouseout="hidePlayIcon(this)">
-                    <img src="https://i.scdn.co/image/ab6761610000e5ebcb6926f44f620555ba444fca" alt="" />
-                    <i class="bi bi-play-circle-fill green_appearing_button"></i>
-                    <p>Pritam</p>
-                    <p>Artist</p>
-                  </div>
-                  <div class="template" onmouseover="showPlayIcon(this)" onmouseout="hidePlayIcon(this)">
-                    <img src="https://www.sarkarinaukriexams.com/images/bio/1703740002-bio.png" alt="" />
-                    <i class="bi bi-play-circle-fill green_appearing_button"></i>
-                    <p>Dhanda Nyoliwala</p>
-                    <p>Artist</p>
-                  </div>
-                  <div class="template" onmouseover="showPlayIcon(this)" onmouseout="hidePlayIcon(this)">
-                    <img src="https://static.india.com/wp-content/uploads/2023/02/Honey-Singh-2.jpg" alt="" />
-                    <i class="bi bi-play-circle-fill green_appearing_button"></i>
-                    <p>Yo Yo Honey Singh</p>
-                    <p>Artist</p>
-                  </div>
-                  <div class="template" onmouseover="showPlayIcon(this)" onmouseout="hidePlayIcon(this)">
-                    <img
-                      src="https://yt3.googleusercontent.com/ytc/AIf8zZTtB8M4MHDSXJvaDkpbCDKttlx2gs71nHxwEgq3pg=s900-c-k-c0x00ffffff-no-rj"
-                      alt="" />
-                    <i class="bi bi-play-circle-fill green_appearing_button"></i>
-                    <p>Anuv jain</p>
-                    <p>Artist</p>
-                  </div>
-                  <div class="template" onmouseover="showPlayIcon(this)" onmouseout="hidePlayIcon(this)">
-                    <img
-                      src="https://i0.wp.com/www.lyricspedia.co.in/wp-content/uploads/2023/08/Screenshot_20230818-123902-02.jpeg?resize=580%2C620&ssl=1"
-                      alt="" />
-                    <i class="bi bi-play-circle-fill green_appearing_button"></i>
-                    <p>Karan Aujla</p>
-                    <p>Artist</p>
-                  </div>
-                </div>
-              </div>
-  
-            </div>
-            <div class="playlist roboto-regular Aujla">
-              <div class="platlist_detail bg_auj">
-  
-                <img class="platlist_detail_img " src="img/karan.jpg" alt="">
-  
-                <div class="platlist_detail_d">
-                  <p class="platlist_detail_p">spotify</p>
-                  <h1 class="platlist_detail_head">Karan Aujla</h1>
-                  <p class="platlist_detail_p">
-                    chill beats, lofi vibes, new tracks every week...
-                  </p>
-                  <div class="det">
-                    <img src="https://cdn-icons-png.flaticon.com/512/174/174872.png" alt="" style="height:20px">
-                    <a href="index.html" id="title">spotify</a>
-                    <ul style="display:flex ;list-style: inside;">
-                      <li>5,246,526 likes ,</li>
-                      <li>750 songs , </li>
-                      <li>over 24 hr </li>
-                    </ul>
-  
-                  </div>
-                </div>
-              </div>
-  
-              <div class="playlist_access">
-                <div class="platlist_access_btn">
-                  <p class="e">play</p>
-                  <p class="e">heart</p>
-                  <p class="e">dot</p>
-                </div>
-                <div class="platlist_access_list">
-                  <p>list</p>
-                </div>
-              </div>
-              <div class="list roboto-regular">
-                <div class="List_index item_detail">
-                  <div class="list_index">#</div>
-                  <div class="album" style="width:25vw">
-                    Title
-                  </div>
-                  <div class="album" ">Album</div>
-                          <div class=" album">Date Added</div>
-                  <img
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOs_TrsdBIw1jUmv6PY1_LcmzFCSlYXZl4yq8iNS8ARw&s"
-                    style="padding-left:2rem;height:30px" alt="">
-                </div>
-                <div class="item_detail">
-                  <div class="list_index">1</div>
-                  <img class="list_img"
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsgg2QUx9ePZv5wh-D-gcB5eGtK6NOzrzqrw&usqp=CAU"
-                    alt="">
-                  <div class="list_name">
-                    <p id="song_name">White Brown Black</p>
-                    <p id="song_list">
-                      White Brown Black
-                    </p>
-                  </div>
-                  <div class="album" id="abl">Karan Aujla</div>
-                  <div class="album">2 week ago</div>
-                  <div class="time">2:38</div>
-                </div>
-                <div class="item_detail">
-                  <div class="list_index">2</div>
-                  <img class="list_img"
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0gZuSjTclxZ8p52kmREqxOQ6StIcgqtiSmQ&usqp=CAU"
-                    alt="">
-                  <div class="list_name">
-                    <p id="song_name">Jee Ni Lagda</p>
-                    <p id="song_list">
-                      Making Memories
-                    </p>
-                  </div>
-                  <div class="album" id="abl">Karan Aujla</div>
-                  <div class="album">2 week ago</div>
-                  <div class="time">8:23</div>
-                </div>
-                <div class="item_detail roboto-regular">
-                  <div class="list_index">3</div>
-                  <img class="list_img"
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1gkOQreh0-AKbJR5Xeh29bSin0RpPOoUm6g&usqp=CAU"
-                    alt="">
-                  <div class="list_name">
-                    <p id="song_name">Chitta Kurtta</p>
-                    <p id="song_list">
-                      Chitta Kurtta
-                    </p>
-                  </div>
-                  <div class="album" id="abl">Karan Aujla</div>
-                  <div class="album">3 week ago</div>
-                  <div class="time">6:45</div>
-                </div>
-                <div class="item_detail">
-                  <div class="list_index">4</div>
-                  <img class="list_img"
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSd58_c1ScvIqqw_ysngIKSW-JxKSD5mY_NdA&usqp=CAU"
-                    alt="">
-                  <div class="list_name">
-                    <p id="song_name">Players</p>
-                    <p id="song_list">
-                      3.00AM Seasons
-                    </p>
-                  </div>
-                  <div class="album" id="abl">Karan Aujla</div>
-                  <div class="album">2 week ago</div>
-                  <div class="time">1:29</div>
-                </div>
-                <div class="item_detail">
-                  <div class="list_index">5</div>
-                  <img class="list_img"
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4ivN-st_b5oX295qC9bZMUbGL8UHFlPLvxA&usqp=CAU"
-                    alt="">
-                  <div class="list_name">
-                    <p id="song_name">On Top</p>
-                    <p id="song_list">
-                      On Top
-                    </p>
-                  </div>
-                  <div class="album" id="abl">Karan Aujla</div>
-                  <div class="album">4 week ago</div>
-                  <div class="time">4:48</div>
-                </div>
-                <div class="item_detail">
-                  <div class="list_index">6</div>
-                  <img class="list_img"
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThbaTE_-sHwgB9G-ILCxZkZbHvlmJsvERY_g&usqp=CAU"
-                    alt="">
-                  <div class="list_name">
-                    <p id="song_name">52 Bars</p>
-                    <p id="song_list">
-                      Four You
-                    </p>
-                  </div>
-                  <div class="album" id="abl">Karan Aujla</div>
-                  <div class="album">2 week ago</div>
-                  <div class="time">2:11</div>
-                </div>
-  
-                <p class="headings">You might also like</p>
-  
-                <div class="song">
-                  <div class="template " id="pritam" onmouseover="showPlayIcon(this)" onmouseout="hidePlayIcon(this)">
-                    <img src="https://i.scdn.co/image/ab6761610000e5ebcb6926f44f620555ba444fca" alt="" />
-                    <i class="bi bi-play-circle-fill green_appearing_button"></i>
-                    <p>Pritam</p>
-                    <p>Artist</p>
-                  </div>
-                  <div class="template " id="" onmouseover="showPlayIcon(this)" onmouseout="hidePlayIcon(this)">
-                    <img src="https://www.sarkarinaukriexams.com/images/bio/1703740002-bio.png" alt="" />
-                    <i class="bi bi-play-circle-fill green_appearing_button"></i>
-                    <p>Dhanda Nyoliwala</p>
-                    <p>Artist</p>
-                  </div>
-                  <div class="template " id="" onmouseover="showPlayIcon(this)" onmouseout="hidePlayIcon(this)">
-                    <img src="https://static.india.com/wp-content/uploads/2023/02/Honey-Singh-2.jpg" alt="" />
-                    <i class="bi bi-play-circle-fill green_appearing_button"></i>
-                    <p>Yo Yo Honey Singh</p>
-                    <p>Artist</p>
-                  </div>
-                  <div class="template " id="" onmouseover="showPlayIcon(this)" onmouseout="hidePlayIcon(this)">
-                    <img
-                      src="https://yt3.googleusercontent.com/ytc/AIf8zZTtB8M4MHDSXJvaDkpbCDKttlx2gs71nHxwEgq3pg=s900-c-k-c0x00ffffff-no-rj"
-                      alt="" />
-                    <i class="bi bi-play-circle-fill green_appearing_button"></i>
-                    <p>Anuv jain</p>
-                    <p>Artist</p>
-                  </div>
-                  <div class="template " id="" onmouseover="showPlayIcon(this)" onmouseout="hidePlayIcon(this)">
-                    <img
-                      src="https://i0.wp.com/www.lyricspedia.co.in/wp-content/uploads/2023/08/Screenshot_20230818-123902-02.jpeg?resize=580%2C620&ssl=1"
-                      alt="" />
-                    <i class="bi bi-play-circle-fill green_appearing_button"></i>
-                    <p>Karan Aujla</p>
-                    <p>Artist</p>
-                  </div>
-                </div>
-              </div>
-  
-            </div>
-          </div>
-          <p class="headings wishing">Good Evening</p>
-
-          <div class="songs">
-            <div class="your_artists">
-              <div class="artists pr" id="Pritam" onmouseover="showPlayIcon(this)" onmouseout="hidePlayIcon(this)">
-                <!-- recent artists blocks  -->
-                <img
-                  src="https://i.scdn.co/image/ab6761610000e5ebcb6926f44f620555ba444fca"
-                  alt=""
-                />
-                <div>
-                  <p>Pritam</p>
-                  <i class="bi bi-play-circle-fill green_btn_to_hide"></i>
-                </div>
-              </div>
-              <div class="artists nyo" onmouseover="showPlayIcon(this)" onmouseout="hidePlayIcon(this)">
-                <!-- recent artists blocks  -->
-                <img
-                  src="https://www.sarkarinaukriexams.com/images/bio/1703740002-bio.png"
-                  alt=""
-                />
-                <div>
-                  <p>Dhanda Nyoliwala</p>
-                  <i class="bi bi-play-circle-fill green_btn_to_hide"></i>
-                </div>
-              </div>
-              <div class="artists honey" onmouseover="showPlayIcon(this)" onmouseout="hidePlayIcon(this)">
-                <!-- recent artists blocks  -->
-                <img
-                  src="https://static.india.com/wp-content/uploads/2023/02/Honey-Singh-2.jpg"
-                  alt=""
-                />
-                <div>
-                  <p>Yo Yo Honey Singh</p>
-                  <i class="bi bi-play-circle-fill green_btn_to_hide"></i>
-                </div>
-              </div>
-              <div class="artists kar" onmouseover="showPlayIcon(this)" onmouseout="hidePlayIcon(this)">
-                <!-- recent artists blocks  -->
-                <img
-                  src="https://i0.wp.com/www.lyricspedia.co.in/wp-content/uploads/2023/08/Screenshot_20230818-123902-02.jpeg?resize=580%2C620&ssl=1"
-                  alt=""
-                />
-                <div>
-                  <p>Karan Aujla</p>
-                  <i class="bi bi-play-circle-fill green_btn_to_hide"></i>
-                </div>
-              </div>
-              <div class="artists jain" onmouseover="showPlayIcon(this)" onmouseout="hidePlayIcon(this)">
-                <!-- recent artists blocks  -->
-                <img
-                  src="https://yt3.googleusercontent.com/ytc/AIf8zZTtB8M4MHDSXJvaDkpbCDKttlx2gs71nHxwEgq3pg=s900-c-k-c0x00ffffff-no-rj"
-                  alt=""
-                />
-                <div>
-                  <p>Anuv Jain</p>
-                  <i class="bi bi-play-circle-fill green_btn_to_hide"></i>
-                </div>
-              </div>
-              <div class="artists" onmouseover="showPlayIcon(this)" onmouseout="hidePlayIcon(this)">
-                <!-- recent artists blocks  -->
-                <img
-                  src="https://luxestar.co.in/storage/product/1668950634.JPG"
-                  alt=""
-                />
-                <div>
-                  <p>Ajay Hooda</p>
-                  <i class="bi bi-play-circle-fill green_btn_to_hide"></i>
-                </div>
-              </div>
-            </div>
-
-            <!-- recent songs  -->
-            <p class="headings">Made For You</p>
-
-            <div class="song">
-              <div class="template" id="pritam" onmouseover="showPlayIcon(this)" onmouseout="hidePlayIcon(this)">
-                <img
-                  src="https://i.scdn.co/image/ab6761610000e5ebcb6926f44f620555ba444fca"
-                  alt=""
-                />
-                <i class="bi bi-play-circle-fill green_appearing_button"></i>
-                <p>Pritam</p>
-                <p>Artist</p>
-              </div>
-              <div class="template" onmouseover="showPlayIcon(this)" onmouseout="hidePlayIcon(this)">
-                <img
-                  src="https://www.sarkarinaukriexams.com/images/bio/1703740002-bio.png"
-                  alt=""
-                />
-                <i class="bi bi-play-circle-fill green_appearing_button"></i>
-                <p>Dhanda Nyoliwala</p>
-                <p>Artist</p>
-              </div>
-              <div class="template" onmouseover="showPlayIcon(this)" onmouseout="hidePlayIcon(this)">
-                <img
-                  src="https://static.india.com/wp-content/uploads/2023/02/Honey-Singh-2.jpg"
-                  alt=""
-                />
-                <i class="bi bi-play-circle-fill green_appearing_button"></i>
-                <p>Yo Yo Honey Singh</p>
-                <p>Artist</p>
-              </div>
-              <div class="template" onmouseover="showPlayIcon(this)" onmouseout="hidePlayIcon(this)">
-                <img
-                  src="https://yt3.googleusercontent.com/ytc/AIf8zZTtB8M4MHDSXJvaDkpbCDKttlx2gs71nHxwEgq3pg=s900-c-k-c0x00ffffff-no-rj"
-                  alt=""
-                />
-                <i class="bi bi-play-circle-fill green_appearing_button"></i>
-                <p>Anuv jain</p>
-                <p>Artist</p>
-              </div>
-              <div class="template" onmouseover="showPlayIcon(this)" onmouseout="hidePlayIcon(this)">
-                <img
-                  src="https://i0.wp.com/www.lyricspedia.co.in/wp-content/uploads/2023/08/Screenshot_20230818-123902-02.jpeg?resize=580%2C620&ssl=1"
-                  alt=""
-                />
-                <i class="bi bi-play-circle-fill green_appearing_button"></i>
-                <p>Karan Aujla</p>
-                <p>Artist</p>
-              </div>
-            </div>
-
-            <p class="headings">Today's Biggest Hits</p>
-
-            <div class="song">
-              <div class="template" onmouseover="showPlayIcon(this)" onmouseout="hidePlayIcon(this)">
-                <img
-                  src="https://i0.wp.com/www.lyricspedia.co.in/wp-content/uploads/2023/08/Screenshot_20230818-123902-02.jpeg?resize=580%2C620&ssl=1"
-                  alt=""
-                />
-                <i class="bi bi-play-circle-fill green_appearing_button"></i>
-                <p>Karan Aujla</p>
-                <p>Artist</p>
-              </div>
-              <div class="template" onmouseover="showPlayIcon(this)" onmouseout="hidePlayIcon(this)">
-                <img
-                  src="https://i0.wp.com/www.lyricspedia.co.in/wp-content/uploads/2023/08/Screenshot_20230818-123902-02.jpeg?resize=580%2C620&ssl=1"
-                  alt=""
-                />
-                <i class="bi bi-play-circle-fill green_appearing_button"></i>
-                <p>Karan Aujla</p>
-                <p>Artist</p>
-              </div>
-              <div class="template" onmouseover="showPlayIcon(this)" onmouseout="hidePlayIcon(this)">
-                <img
-                  src="https://i0.wp.com/www.lyricspedia.co.in/wp-content/uploads/2023/08/Screenshot_20230818-123902-02.jpeg?resize=580%2C620&ssl=1"
-                  alt=""
-                />
-                <i class="bi bi-play-circle-fill green_appearing_button"></i>
-                <p>Karan Aujla</p>
-                <p>Artist</p>
-              </div>
-              <div class="template" onmouseover="showPlayIcon(this)" onmouseout="hidePlayIcon(this)">
-                <img
-                  src="https://i0.wp.com/www.lyricspedia.co.in/wp-content/uploads/2023/08/Screenshot_20230818-123902-02.jpeg?resize=580%2C620&ssl=1"
-                  alt=""
-                />
-                <i class="bi bi-play-circle-fill green_appearing_button"></i>
-                <p>Karan Aujla</p>
-                <p>Artist</p>
-              </div>
-              <div class="template" onmouseover="showPlayIcon(this)" onmouseout="hidePlayIcon(this)">
-                <img
-                  src="https://i0.wp.com/www.lyricspedia.co.in/wp-content/uploads/2023/08/Screenshot_20230818-123902-02.jpeg?resize=580%2C620&ssl=1"
-                  alt=""
-                />
-                <i class="bi bi-play-circle-fill green_appearing_button"></i>
-                <p>Karan Aujla</p>
-                <p>Artist</p>
-              </div>
-              <div class="template" onmouseover="showPlayIcon(this)" onmouseout="hidePlayIcon(this)">
-                <img
-                  src="https://i0.wp.com/www.lyricspedia.co.in/wp-content/uploads/2023/08/Screenshot_20230818-123902-02.jpeg?resize=580%2C620&ssl=1"
-                  alt=""
-                />
-                <i class="bi bi-play-circle-fill green_appearing_button"></i>
-                <p>Karan Aujla</p>
-                <p>Artist</p>
-              </div>
-              <div class="template" onmouseover="showPlayIcon(this)" onmouseout="hidePlayIcon(this)">
-                <img
-                  src="https://i0.wp.com/www.lyricspedia.co.in/wp-content/uploads/2023/08/Screenshot_20230818-123902-02.jpeg?resize=580%2C620&ssl=1"
-                  alt=""
-                />
-                <i class="bi bi-play-circle-fill green_appearing_button"></i>
-                <p>Karan Aujla</p>
-                <p>Artist</p>
-              </div>
-              <div class="template" onmouseover="showPlayIcon(this)" onmouseout="hidePlayIcon(this)">
-                <img
-                  src="https://i0.wp.com/www.lyricspedia.co.in/wp-content/uploads/2023/08/Screenshot_20230818-123902-02.jpeg?resize=580%2C620&ssl=1"
-                  alt=""
-                />
-                <i class="bi bi-play-circle-fill green_appearing_button"></i>
-                <p>Karan Aujla</p>
-                <p>Artist</p>
-              </div>
-              <div class="template" onmouseover="showPlayIcon(this)" onmouseout="hidePlayIcon(this)">
-                <img
-                  src="https://i0.wp.com/www.lyricspedia.co.in/wp-content/uploads/2023/08/Screenshot_20230818-123902-02.jpeg?resize=580%2C620&ssl=1"
-                  alt=""
-                />
-                <i class="bi bi-play-circle-fill green_appearing_button"></i>
-                <p>Karan Aujla</p>
-                <p>Artist</p>
-              </div>
-              <div class="template" onmouseover="showPlayIcon(this)" onmouseout="hidePlayIcon(this)">
-                <img
-                  src="https://i0.wp.com/www.lyricspedia.co.in/wp-content/uploads/2023/08/Screenshot_20230818-123902-02.jpeg?resize=580%2C620&ssl=1"
-                  alt=""
-                />
-                <i class="bi bi-play-circle-fill green_appearing_button"></i>
-                <p>Karan Aujla</p>
-                <p>Artist</p>
-              </div>
-              <div class="template" onmouseover="showPlayIcon(this)" onmouseout="hidePlayIcon(this)">
-                <img
-                  src="https://i0.wp.com/www.lyricspedia.co.in/wp-content/uploads/2023/08/Screenshot_20230818-123902-02.jpeg?resize=580%2C620&ssl=1"
-                  alt=""
-                />
-                <i class="bi bi-play-circle-fill green_appearing_button"></i>
-                <p>Karan Aujla</p>
-                <p>Artist</p>
-              </div>
-              <div class="template" onmouseover="showPlayIcon(this)" onmouseout="hidePlayIcon(this)">
-                <img
-                  src="https://i0.wp.com/www.lyricspedia.co.in/wp-content/uploads/2023/08/Screenshot_20230818-123902-02.jpeg?resize=580%2C620&ssl=1"
-                  alt=""
-                />
-                <i class="bi bi-play-circle-fill green_appearing_button"></i>
-                <p>Karan Aujla</p>
-                <p>Artist</p>
-              </div>
-              
-            </div>
-          </div>
         </div>
 
-        <div class="search_display ">
-          <p class="headings">Browser All</p>
-          <div class="choice">
-            <div class="genre">
-              <p>Music</p>
-              <img
-                src="https://i.scdn.co/image/ab6761610000e5eb859e4c14fa59296c8649e0e4"
-                alt=""
-              />
+        <div class="mainbox itm">
+            <div class="nav">
+                <div class="leftnav">
+                    <div>
+                        <img src="assets/next.png" alt="" class="prev-icon play-icon">
+                    </div>
+                    <div>
+                        <img src="assets/next.png" alt="" class="next-icon play-icon">
+                    </div>
+                </div>
+                <div class="rightnav">
+                    <div><button class="acc-btn signup-btn roboto-medium" onclick="window.open('sign_up.html'),window.close('index.html')">Sign up</button></div>
+                    <div><button class="acc-btn login-btn roboto-medium" onclick="window.open('login.html'),window.close('index.html')">Log in</button></div>
+                </div>
             </div>
-            <div class="genre">
-              <p>Podcasts</p>
-              <img
-                src="https://www.contentbot.ai/blog/wp-content/uploads/2021/06/podcast.jpg"
-                alt=""
-              />
+            <div class="main">
+                <div class="mainhead">
+                    <div class="mainhead-h1">
+                        <h2 class="roboto-black">Spotify Playlists</h2>
+                    </div>
+                    <div class="mainhead-h2">
+                        <span class="roboto-medium">Show all</span>
+                    </div>
+                </div>
+                <div class="playlistbar">
+                    <div class="card">
+                        <div class="card-thumbnail">
+                            <img src="assets/cards/1.jpg" alt="">
+                        </div>
+                        <div class="card-heading roboto-regular">
+                            <h3>lofi beats</h3>
+                        </div>
+                        <div class="card-txt roboto-regular">
+                            <p>chill beats, lofi vibes, new tracks every week...</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-thumbnail">
+                            <img src="assets/cards/2.jpg" alt="">
+                        </div>
+                        <div class="card-heading roboto-regular">
+                            <h3>Today's Top Hits</h3>
+                        </div>
+                        <div class="card-txt roboto-regular">
+                            <p>Dua Lipa is on top of Hottest 50!</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-thumbnail">
+                            <img src="assets/cards/3.jpg" alt="">
+                        </div>
+                        <div class="card-heading roboto-regular">
+                            <h3>Chillout Lounge</h3>
+                        </div>
+                        <div class="card-txt roboto-regular">
+                            <p>Just lean back and enjoy relaxed beats.</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-thumbnail">
+                            <img src="assets/cards/4.jpg" alt="">
+                        </div>
+                        <div class="card-heading roboto-regular">
+                            <h3>All out 2020s</h3>
+                        </div>
+                        <div class="card-txt roboto-regular">
+                            <p>The biggest songs of the 2020s</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-thumbnail">
+                            <img src="assets/cards/5.jpg" alt="">
+                        </div>
+                        <div class="card-heading roboto-regular">
+                            <h3>Jazz in the ba..</h3>
+                        </div>
+                        <div class="card-txt roboto-regular">
+                            <p>Soft instrumental jazz for all the activities</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mainfoot">
+                    <div class="refer">
+                        <div>
+                            <ul class="ref1 ref">
+                                <li class="ref-heading roboto-regular">Company</li>
+                                <li><a href="" class="ref-itm roboto-regular">About</a></li>
+                                <li><a href="" class="ref-itm roboto-regular">Jobs</a></li>
+                                <li><a href="" class="ref-itm roboto-regular">For the Record</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <ul class="ref2 ref">
+                                <li class="ref-heading roboto-regular">Communities</li>
+                                <li><a href="" class="ref-itm roboto-regular">For Artists</a></li>
+                                <li><a href="" class="ref-itm roboto-regular">Developers</a></li>
+                                <li><a href="" class="ref-itm roboto-regular">Advertising</a></li>
+                                <li><a href="" class="ref-itm roboto-regular">Investors</a></li>
+                                <li><a href="" class="ref-itm roboto-regular">Vendors</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <ul class="ref3 ref">
+                                <li class="ref-heading roboto-regular">Useful links</li>
+                                <li><a href="" class="ref-itm roboto-regular">Support</a></li>
+                                <li><a href="" class="ref-itm roboto-regular">Free Mobile App</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="social">
+                        <div class="div-ig">
+                            <img src="assets/Social/ig.png" alt="" class="followus ig">
+                        </div>
+                        <div class="div-x">
+                            <img src="assets/Social/twitter.png" alt="" class="followus x">
+                        </div>
+                        <div class="div-fb">
+                            <img src="assets/Social/fb.png" alt="" class="followus fb">
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="copyright roboto-light">
+                    &copy; 2024 Spotify AB
+                </div>
             </div>
-            <div class="genre">
-              <p>Live Event</p>
-              <img
-                src="https://www.celebrityschool.in/blogs/wp-content/uploads/2022/07/Vocal-Singing-Lessons.jpg"
-                alt=""
-              />
-            </div>
-            <div class="genre">
-              <p>Motivation</p>
-              <img
-                src="https://static.vecteezy.com/system/resources/thumbnails/024/748/252/small/smiling-men-enjoy-the-nightlife-listening-to-music-outdoors-generated-by-ai-free-photo.jpg"
-                alt=""
-              />
-            </div>
-            <div class="genre">
-              <p>Punjabi</p>
-              <img
-                src="https://i.scdn.co/image/ab67706c0000da84a5eaa3db836a6095938e58e0"
-                alt=""
-              />
-            </div>
-            <div class="genre">
-              <p>New Release</p>
-              <img
-                src="https://as2.ftcdn.net/v2/jpg/02/54/16/05/1000_F_254160598_xtwvEElN8eJaujCVDDdmS5BKyXB0SC3G.jpg"
-                alt=""
-              />
-            </div>
-            <div class="genre">
-              <p>Hindi</p>
-              <img
-                src="https://i.scdn.co/image/ab67706c0000da846ed1d2550b9fdf9da0dd3e81"
-                alt=""
-              />
-            </div>
-            <div class="genre">
-              <p>Soul</p>
-              <img
-                src="https://cdn.shopify.com/s/files/1/1442/3288/files/social-media-one-music-pic_1024x1024.jpg"
-                alt=""
-              />
-            </div>
-            <div class="genre">
-              <p>Punk</p>
-              <img
-                src="https://cdn.vox-cdn.com/thumbor/8fHlyH3tqfMxAHz0hXowSXaZuis=/2x0:996x746/1200x800/filters:focal(2x0:996x746)/cdn.vox-cdn.com/uploads/chorus_image/image/48729983/shutterstock_93888712.0.0.jpg"
-                alt=""
-              />
-            </div>
-            <div class="genre">
-              <p>Funk</p>
-              <img
-                src="https://www.wilsoncenter.org/sites/default/files/styles/embed_text_block/public/media/uploads/images/Image-AFR-Blog-Music-Senegal-Shutterstock_2162906087_0.png"
-                alt=""
-              />
-            </div>
-            <div class="genre">
-              <p>Band</p>
-              <img
-                src="https://www.wallpaperflare.com/static/652/421/207/mando-diao-band-drum-couch-wallpaper.jpg"
-                alt=""
-              />
-            </div>
-            <div class="genre">
-              <p>Latin</p>
-              <img
-                src="https://i.pinimg.com/1200x/46/9c/c0/469cc0d12df2015dd19168e2c7e8586b.jpg"
-                alt=""
-              />
-            </div>
-            <div class="genre">
-              <p>Chill</p>
-              <img
-                src="https://cdn.theatlantic.com/thumbor/N9jItcE69tO9EHwi52Lg1TTm-2M=/0x156:3000x1844/1600x900/media/img/mt/2017/03/RTR3T4ON/original.jpg"
-                alt=""
-              />
-            </div>
-            <div class="genre">
-              <p>Travel</p>
-              <img
-                src="https://www.verywellmind.com/thmb/rHqM4omYwPdBxhVLSt4P0rx032A=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-583825597-5aa602d518ba01003736d40f.jpg"
-                alt=""
-              />
-            </div>
-            <div class="genre">
-              <p>Instruments</p>
-              <img
-                src="https://www.ed.ac.uk/sites/default/files/styles/landscape_breakpoints_theme_uoe_mobile_1x/public/thumbnails/image/pianogirl.jpg?itok=0BvhNsto"
-                alt=""
-              />
-            </div>
-            <div class="genre">
-              <p>Nature</p>
-              <img
-                src="https://images.unsplash.com/photo-1617803021651-8df9d37672a6?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGVyc29uJTIwd2l0aCUyMGhlYWRwaG9uZXN8ZW58MHx8MHx8fDA%3D"
-                alt=""
-              />
-            </div>
-            <div class="genre">
-              <p>Vibe</p>
-              <img
-                src="https://c.saavncdn.com/012/Vibe-English-2018-20180130005500-500x500.jpg"
-                alt=""
-              />
-            </div>
-            <div class="genre">
-              <p>Cultural</p>
-              <img
-                src="https://www.gaonconnection.com/h-upload/2022/10/13/361905-jr19732.webp"
-                alt=""
-              />
-            </div>
-            <div class="genre">
-              <p>Regional</p>
-              <img
-                src="https://news.cgtn.com/news/3d3d514e3249444f79457a6333566d54/img/e1003b18aaae4234995384cb79400cd5/e1003b18aaae4234995384cb79400cd5.jpg"
-                alt=""
-              />
-            </div>
-            <div class="genre">
-              <p>Pop</p>
-              <img
-                src="https://www.stopthebreaks.com/wp-content/uploads/2021/08/6-lesser-known-benefits-and-disadvantages-of-headphones-2.jpg"
-                alt=""
-              />
-            </div>
-            <div class="genre">
-              <p>Love</p>
-              <img
-                src="https://cdn.ivorytribe.com.au/wp-content/uploads/2022/07/12091957/IT_RW_AliTim_timspence-78.jpg"
-                alt=""
-              />
-            </div>
-            <div class="genre">
-              <p>Game</p>
-              <img src="https://cdn.open-pr.com/T/6/T615468910_g.jpg" alt="" />
-            </div>
-            <div class="genre">
-              <p>Arabic</p>
-              <img
-                src="https://c.saavncdn.com/550/Arabic-Music-English-2017-500x500.jpg"
-                alt=""
-              />
-            </div>
-            <div class="genre">
-              <p>Exercise</p>
-              <img
-                src="https://media.istockphoto.com/id/670724074/photo/exercising-at-the-gym.jpg?s=612x612&w=0&k=20&c=jr9YMXFCD2ON4QsU9-ZdVSUd7tdR4vhx0TXaysfasTc="
-                alt=""
-              />
-            </div>
-            <div class="genre">
-              <p>Gym</p>
-              <img
-                src="https://c.saavncdn.com/268/Workout-Vibes-English-2018-20181211083315-500x500.jpg"
-                alt=""
-              />
-            </div>
-            <div class="genre">
-              <p>Kids</p>
-              <img
-                src="https://us.123rf.com/450wm/photosvit/photosvit1905/photosvit190501471/123310067-music-drives-me-crazy-girl-child-listen-music-with-modern-headphones-kid-little-girl-listen-song.jpg?ver=6"
-                alt=""
-              />
-            </div>
-            <div class="genre">
-              <p>Mash Up</p>
-              <img
-                src="https://media.weddingz.in/images/aceaac1da393feef2fd992c2be61de0a/ek-so-teen-sangeet-songs.jpg"
-                alt=""
-              />
-            </div>
-            <div class="genre">
-              <p>Event</p>
-              <img
-                src="https://www.manhattanbride.com/wp-content/uploads/2019/04/Indian-Traditions39-Ceremony-506-Christopher-Brock-Photography.jpg"
-                alt=""
-              />
-            </div>
-          </div>
         </div>
-
-        <div class="footer">
-          <div class="foot">
-            <div class="inner">
-              <div>
-                <p>Company</p>
-                <p>About</p>
-                <p>Jobs</p>
-                <p>For the Record</p>
-              </div>
-              <div>
-                <p>Communities</p>
-                <p>For Artists</p>
-                <p>Developers</p>
-                <p>Advertising</p>
-                <p>Investors</p>
-                <p>vendors</p>
-              </div>
-              <div>
-                <p>Useful Links</p>
-                <p>Support</p>
-                <p>Free Mobile App</p>
-              </div>
-            </div>
-            <div>
-              <i class="bi bi-instagram"></i>
-              <i class="bi bi-twitter"></i>
-              <i class="bi bi-facebook"></i>
-            </div>
-          </div>
-          <hr />
-          <div class="terms">
-            <div class="one">
-              <p>Legal</p>
-              <p>Privacy Center</p>
-              <p>Privacy Policy</p>
-              <p>Cookies</p>
-              <p>About Ads</p>
-              <p>Accessibility</p>
-            </div>
-            <div class="second">
-              <p>© 2024 Spotify AB</p>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
-    <script src="playlist.js"></script>
-    <script src="index.js"></script>
-  </body>
+    <div class="alert">
+        <footer>
+            <div class="footer-txt">
+                <p>Preview of Spotify</p>
+                <p>Sign up to get unlimited songs and podcasts with original ads. No credit card needed.</p>
+            </div>
+            <div class="footer-btn">
+                <button class="signupfree" onclick="window.open('signup.html', '_self');">Sign up free</button>
+            </div>
+        </footer>
+    </div>
+</body>
+
 </html>
